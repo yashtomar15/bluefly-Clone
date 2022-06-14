@@ -5,7 +5,7 @@ const Userauth=require("./Auth/userauth")
 const Userdata=require("./Data/userdata")
 
 
-const {connect}=require("./Mongo/dbAuth")
+const connect=require("./Mongo/dbAuth")
 
 
 App.use(express.urlencoded({extended:true}));
