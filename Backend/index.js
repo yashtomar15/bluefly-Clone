@@ -12,6 +12,9 @@ App.use(express.json())
 App.use("/Auth",Userauth)
 App.use("/Data",Userdata)
 
+App.get("/",(req,res)=>{
+    res.send("welcome to bluefly")
+})
 
 const port =process.env.PORT || 8080
 
