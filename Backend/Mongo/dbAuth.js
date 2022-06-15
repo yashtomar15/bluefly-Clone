@@ -14,7 +14,9 @@ const userSchema=mongoose.Schema({
 // user model
 const User=mongoose.model('user',userSchema);
 
+
 module.exports={connect,User};
+
 
 
 
@@ -24,3 +26,4 @@ module.exports={connect,User};
 //and show dbs
 //use Bluefly
 //and then select collections
+

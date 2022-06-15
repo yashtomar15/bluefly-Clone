@@ -3,14 +3,18 @@ const App=express()
 
 const Userauth=require("./Auth/userauth")
 const Userdata=require("./Data/userdata")
+const userpurchasing=require("./Purchase/userpurchase")
+
 
 const {connect}=require("./Mongo/dbAuth")
+
 
 App.use(express.urlencoded({extended:true}));
 App.use(express.json())
 
 App.use("/Auth",Userauth)
 App.use("/Data",Userdata)
+App.use("/Purchase",userpurchasing)
 
 App.get("/",(req,res)=>{
     res.send("welcome to bluefly")
