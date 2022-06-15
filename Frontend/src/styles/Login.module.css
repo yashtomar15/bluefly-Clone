@@ -1,4 +1,4 @@
-.singnup_wrapper {
+.login_wrapper {
   width: 40%;
   margin: auto;
   padding: 20px;
@@ -23,6 +23,14 @@
   margin: 20px 0;
 }
 
+.flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.flex p {
+  cursor: pointer;
+}
 .item label {
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -57,9 +65,18 @@
 .item.submit input:hover {
   opacity: 0.8;
 }
+.item button {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: #111111;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 820px) {
-  .singnup_wrapper {
+  .login_wrapper {
     width: 100%;
     padding: 40px 20px;
   }

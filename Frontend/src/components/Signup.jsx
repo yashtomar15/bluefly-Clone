@@ -10,7 +10,9 @@ const Signup = () => {
       [name]: value,
     });
   };
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className={styles.singnup_wrapper}>
       <div className={styles.heading}>
