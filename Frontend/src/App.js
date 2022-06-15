@@ -1,7 +1,11 @@
+import ProductPage from "./pages/ProductPage";
+
 function App() {
-  return <div className="App">
-    
-  </div>;
+  return (
+    <div>
+      <ProductPage />
+    </div>
+  );
 }
 
 export default App;

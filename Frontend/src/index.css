@@ -2,5 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Futura, sans-serif;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  max-width: 1260px;
+  margin: auto;
+}
+.slick-prev {
+  left: 30%;
+  top: 66%;
+  z-index: 99999;
+}
+.slick-next {
+  right: 30%;
+  z-index: 9999;
+  top: 66%;
 }

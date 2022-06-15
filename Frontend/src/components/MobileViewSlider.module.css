@@ -1,0 +1,13 @@
+.mobile_view_wrapper {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.mobile_view_wrapper .imgBox {
+  width: 100%;
+}
+.mobile_view_wrapper .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
