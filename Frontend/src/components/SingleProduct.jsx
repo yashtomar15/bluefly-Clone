@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SliderBox from "./SliderBox";
-import styles from "./SingleProduct.module.css";
+import styles from "../styles/SingleProduct.module.css";
 import MobileViewSlider from "./MobileViewSlider";
 
 let images = [

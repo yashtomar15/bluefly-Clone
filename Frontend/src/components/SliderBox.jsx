@@ -2,9 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "./SliderBox.module.css";
+import styles from "../styles/SliderBox.module.css";
 import CloseIcon from "@mui/icons-material/Close";
-import "./common.css";
+import "../styles/common.css";
 
 const SliderBox = ({ handleZoomInOut, images }) => {
   var settings = {

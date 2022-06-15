@@ -2,8 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "./MobileViewSlider.module.css";
-import "./common.css";
+import styles from "../styles/MobileViewSlider.module.css";
+import "../styles/common.css";
 const MobileViewSlider = ({ images }) => {
   var settings = {
     dots: true,
