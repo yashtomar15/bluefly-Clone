@@ -5,8 +5,9 @@ const bluesky =require("../Mongo/dbbody")
 const Userdata=Router()
 
 
-
+//http://localhost:8080/Data/
 Userdata.get("/",async(req,res)=>{
+
     const data=await bluesky.find()
     console.log(data)
     res.send(data)
