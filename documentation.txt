@@ -1,0 +1,121 @@
+//https://blueflyapp.herokuapp.com/
+
+
+//note not all data in database has image1 and image2 as well as color 1 and color 2
+//create the logic accordingly
+//making auth request
+
+1)//for signup
+//https://blueflyapp.herokuapp.com/Auth/signup  //post 
+//enter the body in this format
+    firstName:{type:String,require:true},
+    lastName:String,
+    email:String,
+    password:String
+
+
+2)//for login
+//https://blueflyapp.herokuapp.com/Auth/login  //post
+//body
+    email:String,
+    password:String
+
+3)// get product data
+    https://blueflyapp.herokuapp.com/Data/  //get
+
+ 4)// searching product data (used in serachbar)
+ https://blueflyapp.herokuapp.com/Data/search?q=value;  //get
+
+  5)//filter the data
+  //to know how may cateogary are present
+  https://blueflyapp.herokuapp.com/Data/myval?category=find
+
+  filter by category
+  https://blueflyapp.herokuapp.com/Data/filter?category=Women's wear|| Women's jeans || Men's Pant ||Men's Shirt 
+
+  //to know different sizes present
+  https://blueflyapp.herokuapp.com/Data/myval?size=find
+
+  filter by size
+  https://blueflyapp.herokuapp.com/Data/filter?size=small|| medium|| large
+
+  //to know different color present
+  https://blueflyapp.herokuapp.com/Data/myval?color=find
+
+  //to filter by color
+  https://blueflyapp.herokuapp.com/Data/filter?color=white|| red|| green ||grey ;
+
+  // to know different conitions of product
+  https://blueflyapp.herokuapp.com/Data/myval?condition=find
+
+  //to filter by conditions
+   https://blueflyapp.herokuapp.com/Data/filter?condition=new||used
+
+//to filter the product by minprice and max price
+https://blueflyapp.herokuapp.com/Data/filter?minPrice=500&maxPrice=1000
+
+//for posting orderpurchase into database
+https://blueflyapp.herokuapp.com/Purchase  //post
+format body:
+    id:String,
+    title:String,
+    quantity:Number,
+    price:Number,
+    status:String,
+
+//show the user his purchase history
+https://blueflyapp.herokuapp.com/Purchase?id=62a8dac5e7666e25a1b9738d //get
+id will be saved in redux when user login's in sucessfully
+
+
+
+contribute for database
+
+****************
+database format
+make sure category has only 4 values so add any one of below
+in category section Women's wear|| Women's jeans || Men's Pant ||Men's Shirt 
+
+{
+category: "Women's wear ",
+quantity: 10,
+sizes: ["large","medium","small"],	
+Trending: "best_seller",
+brand:	"polo",
+price: 6331,
+color1:"grey",
+color2:"red",
+title:"Relaxed heritage cotton pocket kurti",
+condition:"new",
+images1:{
+main:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11369156/2020/1/31/7279871f-32aa-4a6b-a08b-a9fe9907b6971580449409366-W-Women-Navy-Blue-Printed-Maxi-Dress-5231580449407990-1.jpg",
+top:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11369156/2020/1/31/d7ae6f12-1217-497e-85f9-4fd1b83eb5531580449409324-W-Women-Navy-Blue-Printed-Maxi-Dress-5231580449407990-2.jpg",
+side:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11369156/2020/1/31/c9240da1-b58f-4a00-ba31-76ee9f43933e1580449409284-W-Women-Navy-Blue-Printed-Maxi-Dress-5231580449407990-3.jpg",
+bottom:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/11369156/2020/1/31/1f8fdc5e-901c-419d-a44e-99242e7b548a1580449409243-W-Women-Navy-Blue-Printed-Maxi-Dress-5231580449407990-4.jpg"
+},
+images2:{
+main:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10690734/2019/12/23/8c54e35d-5195-405a-8034-199617e39c781577085652140-Taavi-Women-Navy-Maroon--Black-Ajrakh-Hand-Block-Print-A-Lin-1.jpg",
+top:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10690734/2019/12/23/5e6be08b-00ec-4a5b-a92f-ddd4cb4a74aa1577085652091-Taavi-Women-Navy-Maroon--Black-Ajrakh-Hand-Block-Print-A-Lin-2.jpg",
+side:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10690734/2019/12/23/742e6507-59d0-410f-807a-53fb167b32661577085651988-Taavi-Women-Navy-Maroon--Black-Ajrakh-Hand-Block-Print-A-Lin-4.jpg",
+bottom:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10690734/2019/12/23/dc1fe5b9-cded-457b-becb-8fe11a3fa71b1577085651947-Taavi-Women-Navy-Maroon--Black-Ajrakh-Hand-Block-Print-A-Lin-5.jpg"
+}
+
+if productdata has only one color then
+{
+category: "Women's wear ",
+quantity: 10,
+sizes: ["large","medium","small"],	
+Trending: "Trending",
+brand:	"canvas",
+price: 6000,
+color1:"yellow",
+title:"Made-in-the-USA flag graphic kurti",
+condition:"used",
+images1:{
+main:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2147866/2017/11/7/11510038871440-Jaipur-Kurti-Women-Kurta-Sets-4861510038871171-1.jpg",
+top:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2147866/2017/11/7/11510038871418-Jaipur-Kurti-Women-Kurta-Sets-4861510038871171-2.jpg",
+side:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2147866/2017/11/7/11510038871397-Jaipur-Kurti-Women-Kurta-Sets-4861510038871171-3.jpg",
+bottom:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2147866/2017/11/7/11510038871360-Jaipur-Kurti-Women-Kurta-Sets-4861510038871171-5.jpg"
+}
+}
+
