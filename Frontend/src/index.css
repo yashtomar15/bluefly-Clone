@@ -4,3 +4,14 @@
   box-sizing: border-box;
   font-family: Futura, sans-serif;
 }
+
+.links > *{
+  margin-right: 10%;
+}
+#filled-number{
+  background:white;
+  border: 1px solid silver;
+  height:1px;
+  text-align: center;
+}
+

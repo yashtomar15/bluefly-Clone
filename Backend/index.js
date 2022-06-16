@@ -1,14 +1,17 @@
 const express=require("express")
 const App=express()
+const cors=require("cors")
 
 const Userauth=require("./Auth/userauth")
 const Userdata=require("./Data/userdata")
 const userpurchasing=require("./Purchase/userpurchase")
 
 
+
+
 const {connect}=require("./Mongo/dbAuth")
 
-
+App.use(cors())
 App.use(express.urlencoded({extended:true}));
 App.use(express.json())
 
