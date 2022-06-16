@@ -13,7 +13,14 @@ Userdata.get("/",async(req,res)=>{
     res.send(data)
 })
 
-
+Userdata.get("/Men's",async(req,res)=>{
+    const data1=await bluesky.find({category:{$regex:"Men's"}})
+    res.send(data1)
+})
+Userdata.get("/Women's",async(req,res)=>{
+    const data1=await bluesky.find({category:{$regex:"Women's",$options:"i"}})
+    res.send(data1)
+})
 //for searching
 Userdata.get("/search",async(req,res)=>{
 //http://localhost:8080/Data/search?q=value;
