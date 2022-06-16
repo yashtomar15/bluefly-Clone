@@ -1,15 +1,13 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose");
 
+const purchaseSchema = mongoose.Schema({
+  id: String,
+  title: String,
+  quantity: Number,
+  price: Number,
+  status: String,
+});
 
-const purchaseSchema=mongoose.Schema({
-    id:String,
-    title:String,
-    quantity:Number,
-    price:Number,
-    status:String,
-})
+const Purch = mongoose.model("purchase", purchaseSchema);
 
-const Purch=mongoose.model("purchase",purchaseSchema)
-
-
-module.exports=Purch;
+module.exports = Purch;
