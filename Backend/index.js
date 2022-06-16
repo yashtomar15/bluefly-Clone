@@ -7,8 +7,6 @@ const Userdata=require("./Data/userdata")
 const userpurchasing=require("./Purchase/userpurchase")
 
 
-
-
 const {connect}=require("./Mongo/dbAuth")
 
 App.use(cors())
