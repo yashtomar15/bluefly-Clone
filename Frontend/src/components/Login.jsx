@@ -54,6 +54,9 @@ const Login = () => {
                 <input type="submit" value="SIGN IN" />
               </div>
             </form>
+            <div className={styles.item}>
+              <button> Create Account</button>
+            </div>
           </div>
         </>
       )}
