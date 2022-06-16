@@ -1,0 +1,78 @@
+.hContainer{
+    margin-top: 18px;
+    
+}
+/* .hzin{
+    width: 100%;
+    position: fixed;
+    z-index: 500;
+    height: 12vh;
+    background-color: #fff;
+} */
+.hparent{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.himgDiv{
+    text-align: center;
+}
+.himgDiv h1{
+    margin-bottom: 0px;
+    letter-spacing: 0.15em;
+}
+.himgDiv img{
+    margin-top: 12px;
+    vertical-align: middle;
+    height: 32px;
+    cursor: pointer;
+}
+.rightDiv{
+    margin: auto;
+    vertical-align: middle;
+    margin-left: 120px;
+    display: flex;
+    padding: 17px 20px;
+}
+.rightDiv div{
+    padding: 0 5px;
+}
+.iconDiv{
+    display: flex;
+    letter-spacing: 0.15em;
+    font-family: Futura,sans-serif;
+    font-size: 15px;
+}
+.icons{
+    font-size:18px;
+    font-weight: lighter;
+}
+.iconDiv span{
+    padding: 2px 5px;
+    color: #303030e7;
+    cursor: pointer;
+}
+.navDiv{
+    text-align: center;
+}
+
+.navlink{
+    width: 92%;
+    margin: auto;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 0px;
+    display: block;
+}
+.navlink li{
+    text-align: center!important;
+    float: left;
+    padding: 8px 16px;
+    letter-spacing: 0.2em;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.navlink li:hover{
+    border-bottom: 2px solid black;
+}
+
