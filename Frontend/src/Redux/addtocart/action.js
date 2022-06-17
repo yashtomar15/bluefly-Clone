@@ -1,4 +1,4 @@
-import{AddtocartData,ToalandQuant,Removecart} from "./actiontypes"
+import{AddtocartData,ToalandQuant,Removecart,Myaddress} from "./actiontypes"
 
 
 
@@ -21,4 +21,11 @@ export const removecart=(payload)=>{
         type:Removecart,
         payload
     }
-} 
+}
+
+export const myaddress=(payload)=>{
+    return{
+        type:Myaddress,
+        payload
+    }
+}
