@@ -4,6 +4,7 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import {
   faMagnifyingGlass,
   faBagShopping,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import bg from "../../assets/bg.webp";
 import "./Header.css";
@@ -12,15 +13,22 @@ import NavbarPopup from "../navbarComponent/NavbarPopup";
 
 const Header = () => {
   const [hoverState, setHoverState] = useState("");
+  const [inputs, setInputs] = useState(false);
 
   const handleHover = (type) => {
-    // console.log(type)
     setHoverState(type);
   };
 
   const handleNoHover = () => {
     setHoverState("");
   };
+
+  const handleInput = () => {
+    setInputs(true);
+  };
+  const handleCut= ()=>{
+    setInputs(false)
+  }
   return (
     <div className="hContainer">
       <div className="hzin">
@@ -28,27 +36,39 @@ const Header = () => {
           <div></div>
           <div className="himgDiv">
             <h1>
-              <Link to={"/"}><img src={bg} alt="" /></Link>
+              <Link to={"/"}>
+                <img src={bg} alt="" />
+              </Link>
             </h1>
           </div>
           <div className="rightDiv">
+            {inputs ? (
+              <>
+              <div className="iconDiv1 ? iconDiv">
+                <input type="text" name=""/>
+                <button onClick={handleCut}><FontAwesomeIcon icon={faXmark}/></button>
+                </div></>
+            ) : (
+              <div className="iconDiv" onClick={handleInput}>
+                <span>
+                  <FontAwesomeIcon className="icons" icon={faMagnifyingGlass} />
+                </span>
+                <span>SEARCH</span>
+              </div>
+            )}
+
             <div className="iconDiv">
-              <span>
-                <FontAwesomeIcon className="icons" icon={faMagnifyingGlass} />
-              </span>
-              <span>SEARCH</span>
-            </div>
-            <div className="iconDiv">
-              <span>
+              <Link to={"/"}><span>
                 <FontAwesomeIcon className="icons" icon={faUser} />
               </span>
-              <span>LOG IN</span>
+              <span>LOG IN</span></Link>
             </div>
             <div className="iconDiv">
+              <Link to={"/"}>
               <span>
                 <FontAwesomeIcon className="icons" icon={faBagShopping} />
               </span>
-              <span>CART</span>
+              <span>CART</span></Link>
             </div>
           </div>
         </div>
@@ -66,20 +86,31 @@ const Header = () => {
                   SHOES
                 </Link>
               </li>
-              <li><Link to={"/"} onMouseEnter={() => handleHover("HANDBAG")}>HANDBAGS &amp; ACCESSORIES</Link>
-                </li>
-              <li><Link to={"/"} onMouseEnter={() => handleHover("DESIGNER")}>
-                DESIGNERS
-                </Link></li>
-              <li><Link to={"/"} onMouseEnter={() => handleHover("SUNGLASSES")}>
-              SUNGLASSES
-                </Link></li>
-              <li><Link to={"/"} onMouseEnter={() => handleHover("JEWELRY")}>
-              JEWELRY &amp; WATCHES
-                </Link></li>
-              <li><Link to={"/"} onMouseEnter={() => handleHover("UNDER")}>
+              <li>
+                <Link to={"/"} onMouseEnter={() => handleHover("HANDBAG")}>
+                  HANDBAGS &amp; ACCESSORIES
+                </Link>
+              </li>
+              <li>
+                <Link to={"/"} onMouseEnter={() => handleHover("DESIGNER")}>
+                  DESIGNERS
+                </Link>
+              </li>
+              <li>
+                <Link to={"/"} onMouseEnter={() => handleHover("SUNGLASSES")}>
+                  SUNGLASSES
+                </Link>
+              </li>
+              <li>
+                <Link to={"/"} onMouseEnter={() => handleHover("JEWELRY")}>
+                  JEWELRY &amp; WATCHES
+                </Link>
+              </li>
+              <li>
+                <Link to={"/"} onMouseEnter={() => handleHover("UNDER")}>
                   UNDER $50
-                </Link></li>
+                </Link>
+              </li>
               <li>
                 <Link to={"/"} onMouseEnter={() => handleHover("BEAUTY")}>
                   BEAUTY

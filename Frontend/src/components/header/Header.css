@@ -34,13 +34,14 @@
     margin: auto;
     vertical-align: middle;
     margin-left: 120px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     padding: 17px 20px;
 }
 .rightDiv div{
     padding: 0 5px;
 }
-.iconDiv{
+.iconDiv, .iconDiv1{
     display: flex;
     letter-spacing: 0.15em;
     font-family: Futura,sans-serif;
@@ -54,6 +55,18 @@
     padding: 2px 5px;
     color: #303030e7;
     cursor: pointer;
+}
+.iconDiv1 input{
+    height: 35px;
+}
+.iconDiv1 button{
+    padding: 2px 5px;
+    color: black;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 35px;
+    background-color: #fff;
 }
 .navDiv{
     text-align: center;
