@@ -64,6 +64,13 @@ Userdata.get("/filter",async(req,res)=>{
         console.log(data1)
         return res.send(data1)
     }
+     //http://localhost:8080/Data/filter?brand=polo||canvas||nike
+     else if(req.query.brand)
+     {
+         let data1=await bluesky.find({brand:req.query.brand})
+         console.log(data1)
+         return res.send(data1)
+     }
     //http://localhost:8080/Data/filter?minPrice=500&maxPrice=1000
     else if(req.query.minPrice && req.query.maxPrice)
     {
@@ -71,10 +78,35 @@ Userdata.get("/filter",async(req,res)=>{
         console.log(data1)
         return res.send(data1)
     }
-   
-
 })
 
+// New contribution---->
+// For sorting
+
+Userdata.get("/sort",async (req,res)=>{    
+const {title,price}=req.query;
+
+//http://localhost:8080/Data/sort?title=inc
+if(title&& title==='inc'){
+    let data=await bluesky.find().sort({title:1});
+    res.send(data);
+}
+//http://localhost:8080/Data/sort?title=dec
+else if(title&& title==='dec'){
+    let data=await bluesky.find().sort({title:-1});
+    res.send(data);
+}
+//http://localhost:8080/Data/sort?price=inc
+else if(price && price==='inc'){
+    let data=await bluesky.find().sort({price:1});
+    res.send(data);
+}
+//http://localhost:8080/Data/sort?price=dec
+else if(price && price==='dec'){
+    let data=await bluesky.find().sort({price:-1});
+    res.send(data);
+}
+})
 //for getting particlar data like types of cateogary or different colors or brand or sizes
 
 Userdata.get("/myval",async(req,res)=>{
@@ -138,6 +170,20 @@ Userdata.get("/myval",async(req,res)=>{
             if(!brr.includes(ele.condition))
             {
                 brr.push(ele.condition)
+            }
+        })
+        console.log(brr)
+        res.send(brr)
+    }
+    //http://localhost:8080/Data/myval?brands=find
+    if(req.query.brands)
+    {
+        let brr=[]
+
+        data.map((ele)=>{
+            if(!brr.includes(ele.brand))
+            {
+                brr.push(ele.brand)
             }
         })
         console.log(brr)
