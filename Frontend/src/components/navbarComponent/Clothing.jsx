@@ -6,6 +6,7 @@ const Clothing = () => {
     <div>
       <div className="cContainer">
         <div className="cParent">
+          <div className="innercParent">
           <div className="cimgDiv">
             <h3>CLOTHING</h3>
             <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/women.jpg?v=1598516476" alt="" />
@@ -54,6 +55,7 @@ const Clothing = () => {
               <p>T-Shirts</p>
               <p>Underwear &amp; Socks</p>
             </div>
+          </div>
           </div>
         </div>
       </div>

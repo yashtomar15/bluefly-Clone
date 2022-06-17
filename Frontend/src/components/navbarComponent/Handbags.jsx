@@ -5,7 +5,8 @@ const Handbags = () => {
   return (
     <div>
       <div className="hContainer">
-        <div className="hParent">
+        <div className="cParent">
+          <div className="innerhParent">
           <div className="cimgDiv">
             <img
               src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/handbag2.jpg?v=1598516541"
@@ -83,6 +84,7 @@ const Handbags = () => {
               <p>Optical &amp; Reading Glasses</p>
               <p>Sunglasses</p>
             </div>
+          </div>
           </div>
         </div>
       </div>

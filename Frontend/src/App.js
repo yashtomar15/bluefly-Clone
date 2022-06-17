@@ -13,14 +13,14 @@ function App() {
   return <div className="App">
     <Header/>
     <Custom/>
-    <Clothing/>
+    {/* <Clothing/> */}
     {/* <Shoe/> */}
     {/* <Handbags/> */}
     {/* <Beauty/> */}
     {/* <Under50/> */}
     {/* <Sunglass/> */}
     {/* <Clearance/> */}
-    <Jewelry/>
+    {/* <Jewelry/> */}
   </div>;
 }
 

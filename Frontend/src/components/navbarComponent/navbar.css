@@ -1,9 +1,17 @@
-.cContainer{
+/* .cContainer{
     text-align: center!important;
     align-items: center!important;
-}
+} */
 
 .cParent{
+    position: fixed;
+    z-index: 100;
+    top: 120px;
+    width: 100vw;
+    margin: auto;
+    background-color: #fff;
+}
+.innercParent{
     width: 45%;
     margin: auto;
     display: grid;
@@ -22,8 +30,7 @@
     font-weight: 450;
 }
 .clothCom{
-    text-align: left;
-    
+    text-align: left; 
 }
 .clothCom h4{
     letter-spacing: 0.25em;
@@ -38,7 +45,7 @@
 
 /*shoe design*/
 
-.sParent{
+.innersParent{
     width: 93%;
     margin: auto;
     display: grid;
@@ -49,7 +56,7 @@
     margin-top: 10px;
 }
 /*Handbags desgin*/
-.hParent{
+.innerhParent{
     width: 80%;
     margin: auto;
     display: grid;
@@ -57,7 +64,7 @@
     gap: 35px;
 }
 /*Beauty Design*/
-.beParent{
+.innerbeParent{
     width: 48%;
     margin: auto;
     display: grid;
@@ -65,7 +72,7 @@
     gap: 35px;
 }
 /*Under 50 desgin*/
-.uParent{
+.inneruParent{
     width: 48%;
     margin: auto;
     display: grid;
@@ -73,7 +80,7 @@
     gap: 35px;
 }
 /*Sunglass design*/
-.suParent{
+.innersuParent{
     width: 50%;
     margin: auto;
     display: grid;
@@ -81,7 +88,7 @@
     gap: 35px;
 }
 /*Clearance desgin*/
-.clParent{
+.innerclParent{
     width: 50%;
     margin: auto;
     display: grid;
@@ -90,7 +97,7 @@
 }
 
 /*jew And watch desgin*/
-.jwParent{
+.innerjwParent{
     width: 84%;
     margin: auto;
     display: grid;
@@ -104,7 +111,6 @@
     margin-left: -130px;
 
 }
-
 
 .watAZ{
     display: flex;

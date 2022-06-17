@@ -6,7 +6,7 @@
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 500;
+    z-index: 100;
     height: 18vh;
     background-color: #fff;
     bottom: 100px;
@@ -70,18 +70,19 @@
     text-align: center!important;
     float: left;
     margin: 8px 16px;
+    padding: 0 1px 5px;
     letter-spacing: 0.2em;
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
 }
-.navlink li:hover{
+/* .navlink li:hover{
     border-bottom: 2px solid black;
-}
-.navlink li:hover .submenu{
-    width: 100%;
-   display: block;
-   position: absolute;
-   z-index: 1000; 
-   background-color: #fff;
+} */
+
+.positionPop{
+    position: absolute;
+    z-index: -200;
+    background-color: #fff;
+    /* border :10px solid red; */
 }
