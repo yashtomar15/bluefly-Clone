@@ -1,0 +1,73 @@
+.trending > div {
+  width: 90vw;
+  /* height: 350px; */
+  margin: auto;
+  padding: 10px 0;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  grid-template-rows: repeat(2, 350px);
+  justify-content: space-around;
+  gap: 10px;
+  /* border: 1px solid red; */
+  margin-bottom: 20px;
+}
+.card {
+  width: 250px;
+  height: inherit;
+  /* border: 1px solid green; */
+  text-align: center;
+  margin: auto;
+}
+.card > img {
+  width: 100%;
+  height: 200px;
+}
+.strikethrough {
+  text-decoration: line-through;
+}
+span {
+  margin-left: 8px;
+}
+span:last-child {
+  color: red;
+}
+
+.trendingBtn {
+  width: 100px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  /* border: 1px solid red; */
+  text-align: center;
+}
+.trendingBtnDiv {
+  width: 90vw;
+  height: 50px;
+  align-content: center;
+}
+
+/* //media */
+@media (max-width: 1200px) {
+  .trending > div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .trending > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .trending > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .trending > div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

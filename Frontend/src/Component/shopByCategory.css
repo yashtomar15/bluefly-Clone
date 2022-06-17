@@ -1,0 +1,29 @@
+.shopByCategory > div {
+  width: 90vw;
+  margin: auto;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.shopByCategory > div > div {
+  width: 200px;
+  height: inherit;
+  /* border: 1px solid green; */
+  text-align: center;
+}
+
+/* .shopByCategory > div { */
+
+.shopByCategory > div > div > img {
+  width: 100%;
+  height: 40vh;
+  transition: 0.5s all ease-in-out;
+}
+
+.shopByCategory > div > div > img:hover {
+  transform: scale(1.1);
+}

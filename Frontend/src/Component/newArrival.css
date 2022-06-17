@@ -1,0 +1,49 @@
+.newArrival > div {
+  margin: auto;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 20px;
+  /* border: 1px solid rebeccapurple; */
+}
+.card {
+  width: 200px;
+  height: inherit;
+  /* border: 1px solid green; */
+  text-align: center;
+}
+.card > img {
+  width: 200px;
+  height: 200px;
+}
+.strikethrough {
+  text-decoration: line-through;
+}
+span {
+  margin-left: 8px;
+}
+span:last-child {
+  color: red;
+}
+
+.newArrivalBtn {
+  width: 100px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  /* border: 1px solid red; */
+  text-align: center;
+}
+.newArrivalBtnDiv {
+  width: 97vw;
+  height: 50px;
+  align-content: center;
+  /* border: 1px solid black; */
+}
+
+.newArrival {
+  margin-bottom: 50px;
+}
