@@ -64,6 +64,13 @@ Userdata.get("/filter",async(req,res)=>{
         console.log(data1)
         return res.send(data1)
     }
+     //http://localhost:8080/Data/filter?brand=polo||canvas||nike
+     else if(req.query.brand)
+     {
+         let data1=await bluesky.find({brand:req.query.brand})
+         console.log(data1)
+         return res.send(data1)
+     }
     //http://localhost:8080/Data/filter?minPrice=500&maxPrice=1000
     else if(req.query.minPrice && req.query.maxPrice)
     {
@@ -71,9 +78,68 @@ Userdata.get("/filter",async(req,res)=>{
         console.log(data1)
         return res.send(data1)
     }
-   
-
 })
+
+// New contribution by yash---->
+// For sorting women's data
+
+Userdata.get("/sortwomens",async (req,res)=>{    
+const {title,price}=req.query;
+
+{
+//http://localhost:8080/Data/sort?title=inc
+if(title&& title==='inc'){
+    let data=await bluesky.find({category:{$regex:"women's", $options:"i"}}).sort({title:1});
+    res.send(data);
+}
+//http://localhost:8080/Data/sort?title=dec
+else if(title&& title==='dec'){
+    let data=await bluesky.find({category:{$regex:"women's", $options:"i"}}).sort({title:-1});
+    res.send(data);
+}
+//http://localhost:8080/Data/sort?price=inc
+else if(price && price==='inc'){
+    let data=await bluesky.find({category:{$regex:"women's", $options:"i"}}).sort({price:1});
+    res.send(data);
+}
+//http://localhost:8080/Data/sort?price=dec
+else if(price && price==='dec'){
+    let data=await bluesky.find({category:{$regex:"women's", $options:"i"}}).sort({price:-1});
+    res.send(data);
+}
+
+}
+})
+
+// For sorting mens data
+
+Userdata.get("/sortmens",async (req,res)=>{    
+    const {title,price}=req.query;
+    
+    {
+    //http://localhost:8080/Data/sortmens?title=inc
+    if(title&& title==='inc'){
+        let data=await bluesky.find({category:{$regex:"men's", $options:"i"}}).sort({title:1});
+        res.send(data);
+    }
+    //http://localhost:8080/Data/sortmens?title=dec
+    else if(title&& title==='dec'){
+        let data=await bluesky.find({category:{$regex:"men's", $options:"i"}}).sort({title:-1});
+        res.send(data);
+    }
+    //http://localhost:8080/Data/sortmens?price=inc
+    else if(price && price==='inc'){
+        let data=await bluesky.find({category:{$regex:"men's", $options:"i"}}).sort({price:1});
+        res.send(data);
+    }
+    //http://localhost:8080/Data/sortmens?price=dec
+    else if(price && price==='dec'){
+        let data=await bluesky.find({category:{$regex:"men's", $options:"i"}}).sort({price:-1});
+        res.send(data);
+    }
+    
+    }
+    })
 
 //for getting particlar data like types of cateogary or different colors or brand or sizes
 
@@ -138,6 +204,20 @@ Userdata.get("/myval",async(req,res)=>{
             if(!brr.includes(ele.condition))
             {
                 brr.push(ele.condition)
+            }
+        })
+        console.log(brr)
+        res.send(brr)
+    }
+    //http://localhost:8080/Data/myval?brands=find
+    if(req.query.brands)
+    {
+        let brr=[]
+
+        data.map((ele)=>{
+            if(!brr.includes(ele.brand))
+            {
+                brr.push(ele.brand)
             }
         })
         console.log(brr)
