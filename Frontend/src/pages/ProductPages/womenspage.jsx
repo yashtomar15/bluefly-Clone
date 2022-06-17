@@ -21,7 +21,7 @@ setData(data);
 }
     return(
         <div>
-        <h1 className={styles.pageHeading}>Womens's Dress</h1>
+        <h1  className={styles.pageHeading}>Womens's Dress</h1>
 <div className={styles.Cont1}>
      <p>Showing <span>19605</span> results for "Women's Dresses"</p>
       <div><DropDown filterData={filterData}/></div>

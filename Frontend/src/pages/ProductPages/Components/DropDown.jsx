@@ -34,7 +34,7 @@ const handleClick=(e)=>{
 }
 return(
     <>
-    <div className="dropdown">
+    <div  className="dropdown">
   <button className="dropbtn">{Value}</button>
   <div className="dropdown-content">
     <p onClick={handleClick}  >BESTSELLING</p>

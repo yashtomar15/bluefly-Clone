@@ -15,7 +15,7 @@ export const WomensOne=(items)=>{
     const discount=price*0.6;
     return(
         <> 
-        <div className={styles.container}>
+        <div  className={styles.container}>
             <img src={image} alt='top dress' className={styles.dress} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
             {/* <p className='brand'> {brand},{color1},{color2 && color2}{sizes},condition_{condition},extra off</p> */}
             <div>
