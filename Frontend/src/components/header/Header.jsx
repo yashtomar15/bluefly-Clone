@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -7,9 +7,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import bg from '../../assets/bg.webp'
 import "./Header.css";
-import Custom from "../custom/Custom";
 
 const Header = () => {
+  const [clothing,setClothing] = useState(false);
+
+  const handleC = ()=>{
+    setClothing(true)
+  }
   return (
     <div className="hContainer">
      <div className="hzin">
@@ -17,9 +21,8 @@ const Header = () => {
         <div></div>
         <div className="himgDiv">
           <h1>
-            <img src={bg} />
+            <img src={bg} alt="" />
           </h1>
-          <img src="" alt="" />
         </div>
         <div className="rightDiv">
           <div className="iconDiv">
@@ -46,11 +49,10 @@ const Header = () => {
       <div>
         <div className="navDiv">
           <ul className="navlink">
+            <li style={{marginLeft:"35px"}}>CLOTHING</li>
             <li>SHOES</li>
             <li>HANDBAGS & ACCESSORIES</li>
             <li>DESIGNERS</li>
-            <li>WOMEN</li>
-            <li>MEN</li>
             <li>SUNGLASSES</li>
             <li>JEWELRY & WATCHES</li>
             <li>UNDER $50</li>
@@ -60,7 +62,6 @@ const Header = () => {
         </div>
       </div>
      </div>
-    <Custom/>
     </div>
 
   );

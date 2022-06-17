@@ -1,0 +1,112 @@
+.cContainer{
+    text-align: center!important;
+    align-items: center!important;
+}
+
+.cParent{
+    width: 45%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+.cimgDiv{
+    text-align: left;
+}
+.cimgDiv p{
+    font-size: 13px;
+    line-height: 2.1;
+}
+.cimgDiv h3{
+    margin: 15px 0 6px;
+    font-weight: 450;
+}
+.clothCom{
+    text-align: left;
+    
+}
+.clothCom h4{
+    letter-spacing: 0.25em;
+    font-size: 13px;
+    margin: 15px 0;
+}
+.clothCom p{
+    font-size: 13.5px;
+    line-height: 2.1;
+    font-weight: 400;
+}
+
+/*shoe design*/
+
+.sParent{
+    width: 93%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 35px;
+}
+.cimgDiv img{
+    margin-top: 10px;
+}
+/*Handbags desgin*/
+.hParent{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 35px;
+}
+/*Beauty Design*/
+.beParent{
+    width: 48%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+/*Under 50 desgin*/
+.uParent{
+    width: 48%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 35px;
+}
+/*Sunglass design*/
+.suParent{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+/*Clearance desgin*/
+.clParent{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+
+/*jew And watch desgin*/
+.jwParent{
+    width: 84%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+.jwDiv{
+    margin-left: -30px;
+}
+.jwCom{
+    margin-left: -130px;
+
+}
+
+
+.watAZ{
+    display: flex;
+    gap:80px;
+}

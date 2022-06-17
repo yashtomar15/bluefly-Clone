@@ -121,12 +121,7 @@ const Custom = () => {
       </div>
 
       <hr style={{ marginTop: "45px" }} />
-      <div>
-        <div className="hDiv">
-          <h1>SHOP BY CATEGORY</h1>
-        </div>
-        <div></div>
-      </div>
+      
     </div>
   );
 };

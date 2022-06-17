@@ -1,17 +1,20 @@
 .hContainer{
     margin-top: 18px;
-    
+    height: 90px;
 }
-/* .hzin{
+.hzin{
     width: 100%;
     position: fixed;
+    top: 0;
     z-index: 500;
-    height: 12vh;
+    height: 18vh;
     background-color: #fff;
-} */
+    bottom: 100px;
+}
 .hparent{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    margin-top: 20px;
 }
 .himgDiv{
     text-align: center;
@@ -66,7 +69,7 @@
 .navlink li{
     text-align: center!important;
     float: left;
-    padding: 8px 16px;
+    margin: 8px 16px;
     letter-spacing: 0.2em;
     font-size: 13px;
     font-weight: 400;
@@ -75,4 +78,10 @@
 .navlink li:hover{
     border-bottom: 2px solid black;
 }
-
+.navlink li:hover .submenu{
+    width: 100%;
+   display: block;
+   position: absolute;
+   z-index: 1000; 
+   background-color: #fff;
+}
