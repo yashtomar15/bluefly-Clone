@@ -35,7 +35,7 @@ const Jewelry = () => {
                 <h4>TOP DESIGNER WATCHES A-J</h4>
               </div>
               <div className="watAZ">
-                <div>
+                <div style={{marginBottom:"45px"}}>
                   <p>Anne Klein</p>
                   <p>Armani</p>
                   <p>Baume &amp; Mercier</p>

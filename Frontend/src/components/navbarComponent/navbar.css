@@ -1,7 +1,7 @@
-/* .cContainer{
+.cContainer{
     text-align: center!important;
     align-items: center!important;
-} */
+}
 
 .cParent{
     position: fixed;
@@ -26,7 +26,8 @@
     line-height: 2.1;
 }
 .cimgDiv h3{
-    margin: 15px 0 6px;
+    font-size: 16px;
+    margin: 15px 0 2px;
     font-weight: 450;
 }
 .clothCom{
@@ -111,8 +112,38 @@
     margin-left: -130px;
 
 }
-
 .watAZ{
     display: flex;
     gap:80px;
+}
+
+/*Desiner style*/
+.innerdesParent{
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 240px 450px 100px;
+    gap: 25px;
+}
+
+.featDiv{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 35px;
+}
+.DesAZ{
+    display: grid;
+    grid-template-columns: 55px 55px 55px 55px;
+    grid-template-rows: repeat(7,1fr);
+}
+@media screen and ( max-width: 1300px){
+    .cParent{
+        top: 170px;
+    }
+}
+
+@media screen and ( max-width: 1050px){
+    .cParent .cimgDiv{
+        display: none;
+    }
 }

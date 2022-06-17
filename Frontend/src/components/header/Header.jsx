@@ -28,7 +28,7 @@ const Header = () => {
           <div></div>
           <div className="himgDiv">
             <h1>
-              <img src={bg} alt="" />
+              <Link to={"/"}><img src={bg} alt="" /></Link>
             </h1>
           </div>
           <div className="rightDiv">

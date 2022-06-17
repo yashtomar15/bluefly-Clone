@@ -21,7 +21,7 @@ const Under50 = () => {
               <div>
                 <h4>SHOP BY CATEGORY</h4>
               </div>
-              <div style={{ marginBottom: "20px" }}>
+              <div style={{ marginBottom: "45px" }}>
                 <p>Women</p>
                 <p>Shoes</p>
                 <p>Handbags &amp; Accessories</p>

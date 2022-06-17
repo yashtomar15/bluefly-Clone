@@ -36,7 +36,7 @@ const Handbags = () => {
             <div>
               <h4>WOMEN'S DESIGNERS</h4>
             </div>
-            <div>
+            <div style={{marginBottom:"45px"}}>
               <p>Balenciaga</p>
               <p>Bottega Veneta</p>
               <p>Burberry</p>

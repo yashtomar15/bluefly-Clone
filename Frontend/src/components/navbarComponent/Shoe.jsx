@@ -9,11 +9,11 @@ const Shoe = () => {
           <div className="innersParent">
             <div className="cimgDiv">
               <img
-                src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/women.jpg?v=1598516476"
+                src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/women_shoes.jpg?v=1598516516"
                 alt=""
               />
-              <p style={{ fontWeight: "bold" }}>DRESSES</p>
-              <p>UP TO 80% OFF</p>
+              <p style={{ fontWeight: "bold" }}>SANDALS</p>
+              <p>UP TO 70% OFF</p>
             </div>
             <div className="clothCom">
               <div>
@@ -37,7 +37,7 @@ const Shoe = () => {
               <div>
                 <h4>WOMEN'S DESIGNERS</h4>
               </div>
-              <div>
+              <div style={{marginBottom:"45px"}}>
                 <p>Burberry</p>
                 <p>Chloe</p>
                 <p>Christian Louboutin</p>

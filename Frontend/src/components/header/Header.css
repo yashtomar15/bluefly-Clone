@@ -1,6 +1,7 @@
 .hContainer{
-    margin-top: 18px;
+    margin-top: 15px;
     height: 90px;
+    text-align: center!important;
 }
 .hzin{
     width: 100%;
@@ -14,7 +15,7 @@
 .hparent{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    margin-top: 20px;
+    margin-top: 18px;
 }
 .himgDiv{
     text-align: center;
@@ -76,9 +77,9 @@
     font-weight: 400;
     cursor: pointer;
 }
-/* .navlink li:hover{
+.navlink li:hover{
     border-bottom: 2px solid black;
-} */
+}
 
 .positionPop{
     position: absolute;
@@ -86,3 +87,14 @@
     background-color: #fff;
     /* border :10px solid red; */
 }
+
+@media screen and ( max-width: 1300px){
+    .hzin{
+        text-align: center!important;
+        height: 25vh;
+        background-color: #fff;
+    }
+
+}
+
+

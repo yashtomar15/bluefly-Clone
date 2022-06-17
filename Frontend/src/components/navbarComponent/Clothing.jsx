@@ -38,7 +38,7 @@ const Clothing = () => {
             <div>
               <h4>MEN'S CLOTHING</h4>
             </div>
-            <div>
+            <div style={{marginBottom:"45px"}}>
               <p>Activewear</p>
               <p>Causal Button-Down Shirts</p>
               <p>Coats &amp; Jackets</p>

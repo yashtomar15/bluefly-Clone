@@ -14,7 +14,7 @@ const Beauty = () => {
               <div>
                 <h4>FRAGRANCE</h4>
               </div>
-              <div>
+              <div style={{marginBottom:"45px"}}>
                 <p>Shop All</p>
               </div>
             </div>

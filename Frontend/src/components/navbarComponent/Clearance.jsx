@@ -20,7 +20,7 @@ export const Clearance = () => {
               <div>
                 <h4>WOMEN'S</h4>
               </div>
-              <div>
+              <div style={{marginBottom:"45px"}}>
                 <p>Accessories</p>
                 <p>Activewear</p>
                 <p>Coats &amp; Jackets</p>

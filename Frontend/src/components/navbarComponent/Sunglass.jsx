@@ -19,7 +19,7 @@ const Sunglass = () => {
               <div>
                 <h4>WOMEN'S SUNGLASSES</h4>
               </div>
-              <div>
+              <div style={{marginBottom:"45px"}}>
                 <p>Shop All</p>
                 <p>Burberry</p>
                 <p>Chanel</p>
