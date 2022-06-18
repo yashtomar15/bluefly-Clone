@@ -18,7 +18,7 @@ App.use("/Data",Userdata)
 App.use("/Purchase",userpurchasing)
 
 App.get("/",(req,res)=>{
-    res.send("welcome to bluefly")
+    res.send("welcome to blueflywebsite this is a backend")
 })
 
 
