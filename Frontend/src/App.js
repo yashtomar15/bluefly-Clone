@@ -12,6 +12,8 @@ import Login from "./components/Login";
 import { Shipment } from "./pages/addtocart/Shipmentpage";
 import { Payment } from "./pages/addtocart/Payment";
 import { OtpInput } from "./pages/addtocart/Orderdone";
+import { MensPage } from "./pages/ProductPages/Menspage";
+import { RequiredAuth } from "./components/RequiredAuth";
 function App() {
   const val = Math.floor(1000 + Math.random() * 9000);
   const Handleinput = (otp) => {
@@ -26,23 +28,42 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/cart/*" element={<Cartpage />}></Route>
-          <Route path="/cart/information" element={<Information />}></Route>
+          <Route
+            path="/cart/information"
+            element={
+              <RequiredAuth>
+                <Information />
+              </RequiredAuth>
+            }
+          ></Route>
           <Route
             path="/cart/information/shipment"
-            element={<Shipment />}
+            element={
+              <RequiredAuth>
+                <Shipment />
+              </RequiredAuth>
+            }
           ></Route>
           <Route
             path="/cart/information/shipment/payment"
-            element={<Payment />}
+            element={
+              <RequiredAuth>
+                <Payment />
+              </RequiredAuth>
+            }
           ></Route>
           <Route
             path="/cart/information/shipment/payment/orderdone"
             element={
-              <OtpInput totalInputs={4} onChange={Handleinput} val={val} />
+              <RequiredAuth>
+                <OtpInput totalInputs={4} onChange={Handleinput} val={val} />
+              </RequiredAuth>
             }
           ></Route>
-          <Route path="/products" element={<WomensPage />}></Route>
-          <Route path="/products/:id" element={<SingleProduct />}></Route>
+          <Route path="/womens" element={<WomensPage />}></Route>
+          <Route path="/mens" element={<MensPage />}></Route>
+          <Route path="/womens/:id" element={<SingleProduct />}></Route>
+          <Route path="/mens/:id" element={<SingleProduct />}></Route>
           <Route path="/singleProduct" element={<ProductPage />}></Route>
         </Routes>
         {/* <WomensPage/> */}

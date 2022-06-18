@@ -11,8 +11,6 @@ import { DropDown } from "./Components/DropDown";
 export const WomensPage = () => {
   const [womensData, setData] = useState([]);
   const [update, setUpdate] = useState(false);
-  const filterTypes = ["womens", "Women's", "Women's wear", "Women's jeans"];
-  const sortCategory = ["sortwomens", "womens"];
   useEffect(() => {
     axios
       .get("https://blueflyapp.herokuapp.com/Data/Women's")
@@ -25,6 +23,9 @@ export const WomensPage = () => {
   const filterData = (data) => {
     setData(data);
   };
+
+  const filterTypes = ["womens", "Women's", "Women's wear", "Women's jeans"];
+  const sortCategory = ["sortwomens", "womens"];
 
   return (
     <div>
@@ -43,16 +44,6 @@ export const WomensPage = () => {
             filterData={filterData}
             filterCategory={filterTypes}
           />
-        </div>
-        <div className={styles.dresess}>
-          {womensData.map((item, i) => {
-            return <WomensOne key={i} {...item} />;
-          })}
-        </div>
-      </div>
-      <div className={styles.clothesContainer}>
-        <div>
-          <CustomizedAccordions filterData={filterData} />
         </div>
         <div className={styles.dresess}>
           {womensData.map((item, i) => {
