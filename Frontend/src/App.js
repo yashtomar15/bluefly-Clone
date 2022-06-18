@@ -1,38 +1,28 @@
-<<<<<<< HEAD
-import Login from "./components/Login";
-import Signup from "./components/Signup";
+import React from "react";
+import { Homepage } from "./pages/Homepage";
+import { Cartpage } from "./pages/addtocart/cartpage";
+import { Navbar } from "./Navbar/navbar";
+import { Information } from "./pages/addtocart/Information";
+import { WomensPage } from "./pages/ProductPages/womenspage";
+import { Route, Routes } from "react-router-dom";
 import ProductPage from "./pages/ProductPage";
+import SingleProduct from "./components/SingleProduct";
 
 function App() {
   return (
-    <div className="wrapper">
-      <div className="container">
-        <ProductPage />
-        <Signup />
-        <Login />
-      </div>
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/cart/*" element={<Cartpage />}></Route>
+        <Route path="/cart/information" element={<Information />}></Route>
+        <Route path="/products" element={<WomensPage />}></Route>
+        <Route path="/products/:id" element={<SingleProduct />}></Route>
+        <Route path="/singleProduct" element={<ProductPage />}></Route>
+      </Routes>
+      {/* <WomensPage/> */}
     </div>
   );
-=======
-import React from "react";
-import{Routes,Route} from "react-router-dom"
-import{Homepage} from "./pages/Homepage"
-import{Cartpage} from "./pages/addtocart/cartpage"
-import{Navbar} from "./Navbar/navbar"
-import{Information} from "./pages/addtocart/Information"
-import { WomensPage } from "./pages/ProductPages/womenspage";
-
-function App() {
-  return <div className="App">
-    <Navbar/>
-    <Routes>
-      <Route path="/" element={<Homepage/>}></Route>
-      <Route path="/cart/*" element={<Cartpage/>}></Route>
-      <Route path="/cart/information" element={<Information/>}></Route>
-    </Routes>
-{/* <WomensPage/> */}
-  </div>;
->>>>>>> main
 }
 
 export default App;

@@ -27,13 +27,12 @@ body {
   top: 66%;
 }
 
-.links > *{
+.links > * {
   margin-right: 10%;
 }
-#filled-number{
-  background:white;
+#filled-number {
+  background: white;
   border: 1px solid silver;
-  height:1px;
+  height: 1px;
   text-align: center;
 }
-

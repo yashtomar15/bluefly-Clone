@@ -1,77 +1,93 @@
 import React from "react";
-import { useSelector,useDispatch } from "react-redux";
-import{Topcart,Topcart2,Br,Firstcont,Checkoutbutton,Updatebutton,Forbuttons,Forbuttons1,Totalcontainer,Removebutton} from "./styled";
-import{Firstcartlist} from "./firstcartlist"
-import{removecart} from "../../Redux/addtocart/action"
+import { useSelector, useDispatch } from "react-redux";
+import {
+  Topcart,
+  Topcart2,
+  Br,
+  Firstcont,
+  Checkoutbutton,
+  Updatebutton,
+  Forbuttons,
+  Forbuttons1,
+  Totalcontainer,
+  Removebutton,
+} from "./styled";
+import { Firstcartlist } from "./firstcartlist";
+import { removecart } from "../../Redux/addtocart/action";
 import { useNavigate } from "react-router-dom";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import{Information} from "./Information"
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { Information } from "./Information";
 
-import "../../index.css"
-export const Cartpage=()=>{
+import "../../index.css";
+export const Cartpage = () => {
+  const [render, setrender] = React.useState(0);
+  const [value, setvalue] = React.useState(1);
+  const { cartdata, updateddata, total } = useSelector((state) => state);
+  const navigate = useNavigate();
+  // console.log(cartdata.length)
+  // console.log(cartdata,"this is cart data")
+  // console.log(updateddata,"this i updated data")
+  // console.log(total,"my toal cart price")
+  const dispatch = useDispatch();
 
-    const[render,setrender]=React.useState(0)
-    const [value,setvalue]=React.useState(1)
-    const {cartdata,updateddata,total}=useSelector((state)=>state)
-    const navigate=useNavigate()
-    // console.log(cartdata.length)
-    // console.log(cartdata,"this is cart data")
-    // console.log(updateddata,"this i updated data")
-    // console.log(total,"my toal cart price")
-    const dispatch=useDispatch()
-
-    const removing=(_id)=>{
-        dispatch(removecart(_id))
-        setrender(render+1)
-    }
-    return(
-        <>
-         <Topcart>
-            <p className="p1">CART</p>
-            <p>Continue shopping</p>
-            <div></div>
-        </Topcart>
-        <Topcart2>
-            <div></div>
-            <div>
-                <p>Price</p>
-                <p>Quantity</p>
-                <p>Total</p>
-            </div>   
-        </Topcart2>
-        <Br></Br>
-        <div style={{marginTop:"10%"}}>
-        {
-           cartdata.map((ele)=>{
-            return <Firstcartlist {...ele} key={ele._id} func={removing}/>
-        })
-    }
-     <Br></Br>
+  const removing = (_id) => {
+    dispatch(removecart(_id));
+    setrender(render + 1);
+  };
+  return (
+    <>
+      <Topcart>
+        <p className="p1">CART</p>
+        <p>Continue shopping</p>
+        <div></div>
+      </Topcart>
+      <Topcart2>
+        <div></div>
+        <div>
+          <p>Price</p>
+          <p>Quantity</p>
+          <p>Total</p>
         </div>
-        <Totalcontainer>
-                <div>
-                </div>
-                <div>
-                        <Forbuttons1>
-                            <p>SUBTOTAL</p>
-                            <p>${total}</p>
-                        </Forbuttons1>
-                        <div style={{margin:"10px"}}>
-                            <p style={{fontSize:"10px"}}>Shipping, taxes, and discounts codes calculated at checkout.</p>
-                        </div>
-                        <Forbuttons>
-                            <Updatebutton onClick={()=>{
-                                navigate("/cart",{replace:true})
-                            }}>UPDATE CART</Updatebutton>
-                            <Checkoutbutton onClick={()=>{
-                                navigate("/cart/information",{replace:true})
-                            }}>CHECKOUT</Checkoutbutton>
-                        </Forbuttons>
-                </div>       
-                </Totalcontainer>
-            <Br style={{marginTop:"2%"}}></Br>
-        </>
-
-    )
-}
+      </Topcart2>
+      <Br></Br>
+      <div style={{ marginTop: "10%" }}>
+        {cartdata.map((ele) => {
+          return <Firstcartlist {...ele} key={ele._id} func={removing} />;
+        })}
+        <Br></Br>
+      </div>
+      <Totalcontainer>
+        <div></div>
+        <div>
+          <Forbuttons1>
+            <p>SUBTOTAL</p>
+            <p>${total}</p>
+          </Forbuttons1>
+          <div style={{ margin: "10px" }}>
+            <p style={{ fontSize: "10px" }}>
+              Shipping, taxes, and discounts codes calculated at checkout.
+            </p>
+          </div>
+          <Forbuttons>
+            <Updatebutton
+              onClick={() => {
+                navigate("/cart", { replace: true });
+              }}
+            >
+              UPDATE CART
+            </Updatebutton>
+            <Checkoutbutton
+              onClick={() => {
+                navigate("/cart/information", { replace: true });
+              }}
+            >
+              CHECKOUT
+            </Checkoutbutton>
+          </Forbuttons>
+        </div>
+      </Totalcontainer>
+      <Br style={{ marginTop: "2%" }}></Br>
+    </>
+  );
+};

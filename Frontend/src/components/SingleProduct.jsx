@@ -1,21 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SliderBox from "./SliderBox";
 import styles from "../styles/SingleProduct.module.css";
 import MobileViewSlider from "./MobileViewSlider";
+import { useParams } from "react-router-dom";
 
 let images = [
   {
     id: 1,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2163396_540x.jpg?v=1651787547",
+    img:
+      "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2163396_540x.jpg?v=1651787547",
   },
   {
     id: 2,
-    img: "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2097952_a048da9e-b2a7-4a32-9ee2-aed5694dd339_720x.jpg?v=1651787545",
+    img:
+      "https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2097952_a048da9e-b2a7-4a32-9ee2-aed5694dd339_720x.jpg?v=1651787545",
   },
 ];
 
 const SingleProduct = () => {
+  let { id } = useParams();
+  console.log(id);
   const [zoomIn, setZoomIn] = useState(true);
+  useEffect(() => {
+    const getData = async () => {
+      let res = await fetch(
+        `https://blueflyapp.herokuapp.com/Data/search?q=${id}`
+      );
+      let data = await res.json();
+      console.log(data);
+    };
+    getData();
+  }, [id]);
 
   const handleZoomInOut = () => {
     setZoomIn(!zoomIn);
