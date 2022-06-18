@@ -12,6 +12,7 @@ export const OtpInput=({totalInputs,onChange,val})=>{
         // var val = Math.floor(1000 + Math.random() * 9000);
         setTimeout(()=>{
             alert(`your otp is ${val}`)
+            console.log("hello")
         },2000)
         
     },[])
