@@ -4,6 +4,7 @@ import{Topcart,Topcart2,Br,Firstcont,Checkoutbutton,Updatebutton,Forbuttons,Forb
 import{Firstcartlist} from "./firstcartlist"
 import{removecart,addcartdata} from "../../Redux/addtocart/action"
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/header/Header"
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -29,6 +30,7 @@ export const Cartpage=()=>{
     }
     return(
         <>
+        <Header/>
          <Topcart>
             <p className="p1">CART</p>
             <p>Continue shopping</p>

@@ -1,0 +1,236 @@
+.pDiv{
+    margin-top: 18px;
+}
+.pDiv p{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    vertical-align: middle;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
+.sp1{
+    font-size: 13px;
+    font-weight: 650;
+}
+.sp2{
+    font-size: 13px;
+}
+.sliderDivM{
+    width: 100%;
+    background-color: black
+}
+.slick-prev{
+    font-size: 45px;
+}
+.sliderDiv{
+    width: 95%;
+    margin: auto;
+    color: #fff;
+  
+}
+
+.slide1{
+    background-image: url(../../assets/Valentino_1944x.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 450px;
+}
+
+.slide2{
+    height: 450px;
+    background-image: url(../../assets/gucci_1944x.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.slide3{
+    background-image: url(../../assets/Bottega_Veneta_1944x.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 450px;
+}
+.slide4{
+    background-image: url(../../assets/Prada_1944x.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 450px;
+}
+.slide5{
+    background-image: url(../../assets/fENDI_1944x.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 450px;
+}
+.slide6{
+    height: 450px;
+    background-image: url(../../assets/saint_laurent_3_1944x.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.slide7{
+    background-image: url(../../assets/Designer_Shoes_1944x.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 450px;
+}
+.slide8{
+    height: 450px;
+    background-image: url(../../assets/sunglasses1_1944x.jpg);
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.slideCon{
+    margin: 100px 0px;
+    line-height: 1.6;
+}
+.slideCon h1{
+    font-size: 60px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.slideCon h3{
+    font-size: 23px;
+    font-weight: 400;
+}
+.slideCon button{
+    border: none;
+    margin: 30px 10px;
+    width: 230px;
+    height: 42px;
+    color: black;
+    font-weight: 750;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+.dressDiv{
+    width: 95%;
+    margin: auto;
+}
+.woDiv{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 18px;
+    color: white;
+    font-size: 16px;
+}
+
+.dress{
+    background-image: url(../../assets/womentop.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.bautique{
+    background-image: url(../../assets/WEB_ASSET_2_540x.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.top{
+    background-image: url(../../assets/womens_tops_2_540x.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+}
+
+.cwoDiv{
+    margin-top: 130px;
+    line-height: 2;
+    padding: 35px;
+}
+.cwoDiv h2{
+    letter-spacing: 0.43em;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.cwoDiv2{
+    margin-top: 160px;
+    line-height: 2;
+    padding: 35px;
+}
+.cwoDiv2 h2{
+    letter-spacing: 0.2em;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.cwoDiv h1{
+    font-size: 2.8em;
+}
+.cwoDiv2 h1{
+    font-size: 2.8em;
+}
+.cwoDiv h3{
+    line-height: 1.5;
+}
+.cwoDiv2 h3{
+    line-height: 1.5;
+}
+.cwoDiv button{
+    border: none;
+    margin: 30px 10px;
+    width: 50%;
+    height: 42px;
+    color: black;
+    font-weight: 750;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+.cwoDiv2 button{
+    border: none;
+    margin: 30px 10px;
+    width: 230px;
+    height: 42px;
+    color: black;
+    font-weight: 750;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+.hDiv{
+    text-align: center;
+    margin-top: 30px;
+}

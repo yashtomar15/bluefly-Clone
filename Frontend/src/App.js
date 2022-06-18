@@ -9,6 +9,7 @@ import{Payment} from "./pages/addtocart/Payment"
 import{OtpInput} from "./pages/addtocart/Orderdone"
 import{Thankyou} from "./pages/addtocart/Thankyou"
 import{useNavigate} from "react-router-dom"
+import{Forhome} from "./forhome"
 function App() {
 const navigate=useNavigate()
   const val=Math.floor(1000 + Math.random() * 9000);
@@ -25,7 +26,8 @@ const navigate=useNavigate()
 
 
       
-      <Route path="/" element={<Homepage/>}></Route>
+      <Route path="/" element={<Forhome/>}></Route>
+      <Route path="/temp" element={<Homepage/>}></Route>
       <Route path="/cart/*" element={<Cartpage/>}></Route>
       <Route path="/cart/information" element={<Information/>}></Route>
       <Route path="/cart/information/shipment" element={<Shipment/>}></Route>

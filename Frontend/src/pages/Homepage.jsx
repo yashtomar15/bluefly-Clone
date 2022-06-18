@@ -1,6 +1,6 @@
 import React from "react";
 import{Productlist} from "../pages/Productlist"
-
+import Header from "../components/header/Header"
 export const Homepage=()=>{
 const[productdata,setProdctdata]=React.useState([])
 const[val,setval]=React.useState(1)
@@ -17,6 +17,7 @@ const[val,setval]=React.useState(1)
 
     return(
         <div>
+            <Header/>
             <h1>home page</h1>
             {
                 productdata.map((ele,ind)=>{
