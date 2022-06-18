@@ -2,7 +2,8 @@ import React,{useRef,useState} from 'react';
 import styles from './Styles/womenOne.module.css';
 
 export const WomensOne=(items)=>{
-    const {category,quantity,sizes,Trending,brand,price,color1,color2,title,condition,images1,images2}=items;
+    const {brand,price,title,images1,images2}=items;
+    // console.log(items);
     // console.log(category,quantity,sizes,Trending,brand,price,color1,color2,title,condition,images1,images2);
     const [image,setImage]=useState(images1.main);
 

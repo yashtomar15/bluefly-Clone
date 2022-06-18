@@ -8,33 +8,33 @@ import styles from './Styles/womens.module.css';
 import CustomizedAccordions from './Components/FilterAccordian';
 import {DropDown} from './Components/DropDown';
 
-export const WomensPage=()=>{
- const [womensData,setData]=useState([]);
- const[update,setUpdate]=useState(false);
+export const MensPage=()=>{
+ const [mensData,setData]=useState([]);
+ 
  useEffect(()=>{
-    axios.get("https://blueflyapp.herokuapp.com/Data/Women's")
+    axios.get("https://blueflyapp.herokuapp.com/Data/men's")
     .then(({data})=>{setData(data); console.log(data);})
     .catch(err=>console.log('error occured: ',err));
  },[])
 const filterData=(data)=>{
-    setData(data);
+setData(data);
 }
+console.log("mensdata",mensData);
+const filterTypes=["mens","Men's","Men's Shirt","Men's Pant",];
 
-const filterTypes=["womens","Women's","Women's wear","Women's jeans",];
-const sortCategory=["sortwomens","womens"];
-
+const sortCategory=["sortmens","mens"]
     return(
         <div>
-        <h1  className={styles.pageHeading}>Womens's Dress</h1>
+        <h1  className={styles.pageHeading}>Mens's Dress</h1>
 <div className={styles.Cont1}>
-     <p>Showing <span>19605</span> results for "Women's Dresses"</p>
+     <p>Showing <span>19605</span> results for "Men's Dresses"</p>
       <div><DropDown filterData={filterData} sortCategory={sortCategory}/></div>
 </div>
         <div className={styles.clothesContainer}>
             <div><CustomizedAccordions filterData={filterData} filterCategory={filterTypes}/></div>
             <div className={styles.dresess}>
                 {
-                    womensData.map((item,i)=>{
+                    mensData.map((item,i)=>{
                      return  <WomensOne key={i} {...item}/>
                     })
                 }

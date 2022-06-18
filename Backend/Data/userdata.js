@@ -35,7 +35,9 @@ console.log(req.query)
 
 Userdata.get("/filter",async(req,res)=>{
     console.log(req.query)
+// for filtering women's data
 
+{
     //http://localhost:8080/Data/filter?category=Women's wear|| Women's jeans || Men's Pant ||Men's Shirt ;
     if(req.query.category)
     {
@@ -43,41 +45,97 @@ Userdata.get("/filter",async(req,res)=>{
         console.log(data1)
         return res.send(data1)
     }
-    //http://localhost:8080/Data/filter?color=white|| red|| green ||grey ;
-    else if(req.query.color)
+    //http://localhost:8080/Data/filter?womenscolor=white|| red|| green ||grey ;
+    else if(req.query.womenscolor)
     {
-        let data1=await bluesky.find({$or:[{color1:req.query.color},{color2:req.query.color}]})
+        console.log(req.query,"inside")
+        let data1=await bluesky.find({$or:[{color1:req.query.womenscolor},{color2:req.query.womenscolor}],category:["Women's wear","Women's jeans"]})
+        // console.log(data1)
+        return res.send(data1)
+    }
+    //http://localhost:8080/Data/filter?womensize=small|| medium|| large
+    else if(req.query.womenssize)
+    {
+        let data1=await bluesky.find({sizes:req.query.womenssize,category:["Women's wear","Women's jeans"]})
         console.log(data1)
         return res.send(data1)
     }
-    //http://localhost:8080/Data/filter?size=small|| medium|| large
-    else if(req.query.size)
+     //http://localhost:8080/Data/filter?womenscondition=new||used
+    else if(req.query.womenscondition)
     {
-        let data1=await bluesky.find({sizes:req.query.size})
+        let data1=await bluesky.find({condition:req.query.womenscondition,category:["Women's wear","Women's jeans"]})
         console.log(data1)
         return res.send(data1)
     }
-     //http://localhost:8080/Data/filter?condition=new||used
-    else if(req.query.condition)
-    {
-        let data1=await bluesky.find({condition:req.query.condition})
-        console.log(data1)
-        return res.send(data1)
-    }
-     //http://localhost:8080/Data/filter?brand=polo||canvas||nike
-     else if(req.query.brand)
+     //http://localhost:8080/Data/filter?womensbrand=polo||canvas||nike
+     else if(req.query.womensbrand)
      {
-         let data1=await bluesky.find({brand:req.query.brand})
+         let data1=await bluesky.find({brand:req.query.womensbrand,category:["Women's wear","Women's jeans"]})
          console.log(data1)
          return res.send(data1)
      }
-    //http://localhost:8080/Data/filter?minPrice=500&maxPrice=1000
-    else if(req.query.minPrice && req.query.maxPrice)
+    //http://localhost:8080/Data/filter?womensMinPrice=500&womenMaxPrice=1000
+    else if(req.query.womensMinPrice && req.query.womens<axPrice)
     {
-        let data1=await bluesky.find({price:{$gt:req.query.minPrice},price:{$lt:req.query.maxPrice}})
+        let data1=await bluesky.find({price:{$gt:req.query.womensMinPrice},price:{$lt:req.query.womenMaxPrice},category:{$regex:"women's",$options:"i"}})
         console.log(data1)
         return res.send(data1)
     }
+     //http://localhost:8080/Data/filter?trendingcat=bestseller||trending
+
+     else if(req.query.womenstrendingcat)
+     {
+         let data1=await bluesky.find({Trending:req.query.womenstrendingcat,category:["Women's wear","Women's jeans"]})
+         console.log(data1)
+         return res.send(data1)
+     }
+}
+// Additional queries by yash
+// for filtering men's data
+
+{
+     //  http://localhost:8080/Data/filter?menscolor=white|| red|| green ||grey ;
+     if(req.query.menscolor)
+    {
+        let data1=await bluesky.find({$or:[{color1:req.query.menscolor},{color2:req.query.menscolor}],category:["Men's Shirt","Men's Pant"]})
+        return res.send(data1)
+    }
+    //http://localhost:8080/Data/filter?menssize=small|| medium|| large
+    else if(req.query.menssize)
+    {
+        let data1=await bluesky.find({sizes:req.query.menssize,category:["Men's Shirt","Men's Pant"]})
+        console.log(data1)
+        return res.send(data1)
+    }
+     //http://localhost:8080/Data/filter?menscondition=new||used
+    else if(req.query.menscondition)
+    {
+        let data1=await bluesky.find({condition:req.query.menscondition,category:["Men's Shirt","Men's Pant"]})
+        console.log(data1)
+        return res.send(data1)
+    }
+     //http://localhost:8080/Data/filter?mensbrand=polo||canvas||nike
+     else if(req.query.mensbrand)
+     {
+         let data1=await bluesky.find({brand:req.query.mensbrand,category:["Men's Shirt","Men's Pant"]})
+         console.log(data1)
+         return res.send(data1)
+     }
+    //http://localhost:8080/Data/filter?mensMinPrice=500&menMaxPrice=1000
+    else if(req.query.mensMinPrice && req.query.mensMaxPrice)
+    {
+        let data1=await bluesky.find({price:{$gt:req.query.mensMinPrice},price:{$lt:req.query.mensMaxPrice},category:["Men's Shirt","Men's Pant"]})
+        console.log(data1)
+        return res.send(data1)
+    }
+     //http://localhost:8080/Data/filter?menstrendingcat=bestseller||trending
+    else if(req.query.menstrendingcat)
+     {
+         let data1=await bluesky.find({Trending:req.query.menstrendingcat,category:["Men's Shirt","Men's Pant"]})
+         console.log(data1)
+         return res.send(data1)
+     }
+}
 })
 
 // New contribution by yash---->
@@ -87,24 +145,24 @@ Userdata.get("/sortwomens",async (req,res)=>{
 const {title,price}=req.query;
 
 {
-//http://localhost:8080/Data/sort?title=inc
+//http://localhost:8080/Data/sortwomens?title=inc
 if(title&& title==='inc'){
-    let data=await bluesky.find({category:{$regex:"women's", $options:"i"}}).sort({title:1});
+    let data=await bluesky.find({category:["Women's wear","Women's jeans"]}).sort({title:1});
     res.send(data);
 }
-//http://localhost:8080/Data/sort?title=dec
+//http://localhost:8080/Data/sortwomens?title=dec
 else if(title&& title==='dec'){
-    let data=await bluesky.find({category:{$regex:"women's", $options:"i"}}).sort({title:-1});
+    let data=await bluesky.find({category:["Women's wear","Women's jeans"]}).sort({title:-1});
     res.send(data);
 }
-//http://localhost:8080/Data/sort?price=inc
+//http://localhost:8080/Data/sortwomens?price=inc
 else if(price && price==='inc'){
-    let data=await bluesky.find({category:{$regex:"women's", $options:"i"}}).sort({price:1});
+    let data=await bluesky.find({category:["Women's wear","Women's jeans"]}).sort({price:1});
     res.send(data);
 }
-//http://localhost:8080/Data/sort?price=dec
+//http://localhost:8080/Data/sortwomens?price=dec
 else if(price && price==='dec'){
-    let data=await bluesky.find({category:{$regex:"women's", $options:"i"}}).sort({price:-1});
+    let data=await bluesky.find({category:["Women's wear","Women's jeans"]}).sort({price:-1});
     res.send(data);
 }
 
@@ -119,22 +177,22 @@ Userdata.get("/sortmens",async (req,res)=>{
     {
     //http://localhost:8080/Data/sortmens?title=inc
     if(title&& title==='inc'){
-        let data=await bluesky.find({category:{$regex:"men's", $options:"i"}}).sort({title:1});
+        let data=await bluesky.find({category:["Men's Shirt","Men's Pant"]}).sort({title:1});
         res.send(data);
     }
     //http://localhost:8080/Data/sortmens?title=dec
     else if(title&& title==='dec'){
-        let data=await bluesky.find({category:{$regex:"men's", $options:"i"}}).sort({title:-1});
+        let data=await bluesky.find({category:["Men's Shirt","Men's Pant"]}).sort({title:-1});
         res.send(data);
     }
     //http://localhost:8080/Data/sortmens?price=inc
     else if(price && price==='inc'){
-        let data=await bluesky.find({category:{$regex:"men's", $options:"i"}}).sort({price:1});
+        let data=await bluesky.find({category:["Men's Shirt","Men's Pant"]}).sort({price:1});
         res.send(data);
     }
     //http://localhost:8080/Data/sortmens?price=dec
     else if(price && price==='dec'){
-        let data=await bluesky.find({category:{$regex:"men's", $options:"i"}}).sort({price:-1});
+        let data=await bluesky.find({category:["Men's Shirt","Men's Pant"]}).sort({price:-1});
         res.send(data);
     }
     
@@ -154,7 +212,7 @@ Userdata.get("/myval",async(req,res)=>{
         data.map((ele)=>{
             if(!brr.includes(ele.category))
             {
-                brr.push(ele.category)
+                brr.push(ele.category);
             }
         })
         console.log(brr)
@@ -210,7 +268,7 @@ Userdata.get("/myval",async(req,res)=>{
         res.send(brr)
     }
     //http://localhost:8080/Data/myval?brands=find
-    if(req.query.brands)
+    else if(req.query.brands)
     {
         let brr=[]
 
@@ -223,6 +281,20 @@ Userdata.get("/myval",async(req,res)=>{
         console.log(brr)
         res.send(brr)
     }
+     //http://localhost:8080/Data/myval?trendingcat=find
+     else if(req.query.trendingcat)
+     {
+         let brr=[]
+ 
+         data.map((ele)=>{
+             if(!brr.includes(ele.Trending))
+             {
+                 brr.push(ele.Trending)
+             }
+         })
+         console.log(brr)
+         res.send(brr)
+     }
 })
 
 

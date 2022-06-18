@@ -41,22 +41,35 @@ https://blueflyapp.herokuapp.com/Data/Women's
   https://blueflyapp.herokuapp.com/Data/myval?size=find
 
   filter by size
-  https://blueflyapp.herokuapp.com/Data/filter?size=small|| medium|| large
+  https://blueflyapp.herokuapp.com/Data/filter?womenssize=small|| medium|| large
 
   //to know different color present
   https://blueflyapp.herokuapp.com/Data/myval?color=find
 
   //to filter by color
-  https://blueflyapp.herokuapp.com/Data/filter?color=white|| red|| green ||grey ;
+  https://blueflyapp.herokuapp.com/Data/filter?womenscolor=white|| red|| green ||grey ;
 
   // to know different conitions of product
   https://blueflyapp.herokuapp.com/Data/myval?condition=find
 
   //to filter by conditions
-   https://blueflyapp.herokuapp.com/Data/filter?condition=new||used
+   https://blueflyapp.herokuapp.com/Data/filter?womenscondition=new||used
 
 //to filter the product by minprice and max price
-https://blueflyapp.herokuapp.com/Data/filter?minPrice=500&maxPrice=1000
+https://blueflyapp.herokuapp.com/Data/filter?womnesMinPrice=500&womensMaxPrice=1000
+
+ //to know how many Trendingcat are present
+   http://localhost:8080/Data/myval?trendingcat=find
+
+//to filter according to trending categories
+//http://blueflyapp.herokuapp.com/Data/filter?womenstrendingcat=bestseller||trending   
+
+// filter for men's
+just change the womens into mens from the url in every query.
+ex- 
+  //to filter by conditions
+   https://blueflyapp.herokuapp.com/Data/filter?menscondition=new||used
+
 
 //for posting orderpurchase into database
 https://blueflyapp.herokuapp.com/Purchase  //post

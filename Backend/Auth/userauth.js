@@ -4,7 +4,7 @@ const {User} =require('../Mongo/dbAuth'); //User model
 const Userauth=Router()
 
 Userauth.post("/signup", async (req,res)=>{
-    // console.log(req.body);
+    console.log(req.body);
     const user=await new User(req.body);
      await user.save();
     res.send({status:200,response:"Account created succesfully"});
