@@ -1,0 +1,3 @@
+file locations: pages/ProductPages/womenspage.jsx
+bug: useState print last updated value at every render , not print current update
+solution: useState required to update one more time to print update Product.

@@ -3,22 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./Styles/womenOne.module.css";
 
 export const WomensOne = (items) => {
-  //   console.log(items);
-  const {
-    category,
-    quantity,
-    sizes,
-    Trending,
-    brand,
-    price,
-    color1,
-    color2,
-    title,
-    condition,
-    images1,
-    images2,
-    _id,
-  } = items;
+  const { brand, price, title, images1, images2, _id } = items;
+  // console.log(items);
   // console.log(category,quantity,sizes,Trending,brand,price,color1,color2,title,condition,images1,images2);
   const [image, setImage] = useState(images1.main);
 
