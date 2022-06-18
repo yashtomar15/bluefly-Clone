@@ -7,6 +7,8 @@ import { WomensPage } from "./pages/ProductPages/womenspage";
 import { Route, Routes } from "react-router-dom";
 import ProductPage from "./pages/ProductPage";
 import SingleProduct from "./components/SingleProduct";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="/cart/*" element={<Cartpage />}></Route>
         <Route path="/cart/information" element={<Information />}></Route>
         <Route path="/products" element={<WomensPage />}></Route>

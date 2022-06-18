@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/Signup.module.css";
 
 const Signup = () => {
   const [signUpData, setSignUpData] = useState({});
+  const navigate = useNavigate();
   const handleChange = (e) => {
     let { name, value } = e.target;
     setSignUpData({
@@ -10,8 +12,20 @@ const Signup = () => {
       [name]: value,
     });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    let res = await fetch("https://blueflyapp.herokuapp.com/Auth/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/jspn" },
+      body: JSON.stringify(signUpData),
+    });
+    let data = await res.json();
+    if (data.response == "Account created succesfully") {
+      alert(data.response);
+      navigate("/login");
+    } else {
+      alert("Something Went wrong! Please try again");
+    }
   };
   return (
     <div className={styles.singnup_wrapper}>
@@ -23,19 +37,21 @@ const Signup = () => {
           <div className={styles.item}>
             <label> First Name</label>
             <input
-              name="firstname"
+              name="firstName"
               placeholder="First Name"
               onChange={handleChange}
               type="text"
+              required
             />
           </div>
           <div className={styles.item}>
             <label> Last Name</label>
             <input
-              name="lastname"
+              name="lastName"
               placeholder="Last Name"
               onChange={handleChange}
               type="text"
+              required
             />
           </div>
           <div className={styles.item}>
@@ -45,6 +61,7 @@ const Signup = () => {
               placeholder="Email"
               onChange={handleChange}
               type="email"
+              required
             />
           </div>
           <div className={styles.item}>

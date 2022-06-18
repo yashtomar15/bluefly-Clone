@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/Login.module.css";
 import ResetPassword from "./ResetPassword";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
   const [resetStaus, setResetStaus] = useState(false);
+  const navigate = useNavigate();
   const toogleResetStatus = () => {
     setResetStaus(!resetStaus);
   };
@@ -15,8 +17,16 @@ const Login = () => {
       [name]: value,
     });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(loginData);
+    let res = await fetch("https://blueflyapp.herokuapp.com/Auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(loginData),
+    });
+    let data = await res.json();
+    console.log(data);
   };
   return (
     <div className={styles.login_wrapper}>
@@ -55,7 +65,10 @@ const Login = () => {
               </div>
             </form>
             <div className={styles.item}>
-              <button> Create Account</button>
+              <button onClick={() => navigate("/signup")}>
+                {" "}
+                Create Account
+              </button>
             </div>
           </div>
         </>
