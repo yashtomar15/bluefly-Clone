@@ -26,3 +26,14 @@ body {
   z-index: 9999;
   top: 66%;
 }
+
+.links > *{
+  margin-right: 10%;
+}
+#filled-number{
+  background:white;
+  border: 1px solid silver;
+  height:1px;
+  text-align: center;
+}
+

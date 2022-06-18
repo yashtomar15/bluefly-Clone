@@ -1,0 +1,44 @@
+.dresess{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:auto;
+    grid-gap: 20px;
+}
+.filter{
+    width:200px;
+    height: 300px;
+    border:solid 1px;
+}
+.clothesContainer{
+    display: flex;
+    margin:auto;
+    width:70%;
+}
+.pageHeading{
+    font-family: 'Lora', serif;
+     font-size: 32px;;
+    line-height: 38px;
+    font-weight: 400px;
+    text-align:center;
+    margin-top:10px;
+    margin-bottom:50px;
+}
+.Cont1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:13px;
+}
+.Cont1>p{
+margin-left:15%;
+font-family: sans-serif;
+font-weight: 400;
+font-size:15px ;
+line-height: 28px;
+color:#333333;
+}
+.Cont1>p>span{
+   font-weight:bold;
+ }
+.Cont1>div{
+    margin-right:20%;
+}

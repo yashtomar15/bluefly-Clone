@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Space+Grotesk:wght@400;700&family=Ubuntu:wght@700&display=swap');
+
+.dress{
+    width:160px;
+    height:200px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.container{
+    width:160px;
+}
+.container>p{
+margin-top:5px;
+/* text-align: center; */
+width:190px;
+
+}
+.container>div{
+    width:170px;
+    text-align: center;
+    margin-left: 0.7%;
+}
+.title{
+     font-family: 'Open Sans', sans-serif;
+    line-height: 20px;
+    font-size:14px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.brand{
+    font-family: 'Open Sans', sans-serif;
+    font-size:13px;
+    color:#747474;
+    text-transform: uppercase; 
+    cursor: pointer;
+}
+
+
+.price{
+margin-top:7px;
+
+}
+.price>s{
+    font-family:sans-serif;
+    font-weight:400;
+    font-size:15px;
+    color:#333333;
+    /* margin-top:10px; */
+    margin-right:40px;
+    cursor: pointer;
+}
+.price>span{
+    font-family:sans-serif;
+    font-weight:400;
+    font-size:15px;
+    color:#333333;
+    /* margin-top:10px; */
+    cursor: pointer;
+}
+.save{
+    color:#ff4e4e;
+    font-family:sans-serif;
+    font-weight:400;
+    font-size:13px;
+    margin-top:2px;
+    cursor: pointer;
+}

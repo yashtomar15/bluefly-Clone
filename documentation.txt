@@ -22,7 +22,11 @@
 
 3)// get product data
     https://blueflyapp.herokuapp.com/Data/  //get
+3,1// getting men's data
+https://blueflyapp.herokuapp.com/Data/Men's
 
+3.2 //getting women's data
+https://blueflyapp.herokuapp.com/Data/Women's
  4)// searching product data (used in serachbar)
  https://blueflyapp.herokuapp.com/Data/search?q=value;  //get
 
