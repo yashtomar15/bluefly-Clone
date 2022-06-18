@@ -94,3 +94,41 @@ export const Removebutton = styled.button`
   letter-spacing: 5px;
   cursor: pointer;
 `;
+
+export const Sideinfodiv = styled.div`
+  width: 100%;
+  height: 100%;
+  background: #fafafa;
+`;
+export const Sideinfodivcont = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+`;
+export const Forbuttons2 = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+`;
+
+export const Maininfopage = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Lastbutton = styled.button`
+  background: black;
+  color: white;
+  width: 20%;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+export const Backbutton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;

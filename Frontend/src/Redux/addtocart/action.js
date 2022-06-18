@@ -1,4 +1,10 @@
-import { AddtocartData, ToalandQuant, Removecart } from "./actiontypes";
+import {
+  AddtocartData,
+  ToalandQuant,
+  Removecart,
+  Myaddress,
+  Mycoupon,
+} from "./actiontypes";
 
 export const addcartdata = (payload) => {
   return {
@@ -21,4 +27,15 @@ export const removecart = (payload) => {
   };
 };
 
-export const loginReq = (payload) => {};
+export const myaddress = (payload) => {
+  return {
+    type: Myaddress,
+    payload,
+  };
+};
+export const mycoupon = (payload) => {
+  return {
+    type: Mycoupon,
+    payload,
+  };
+};

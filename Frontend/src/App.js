@@ -9,8 +9,14 @@ import ProductPage from "./pages/ProductPage";
 import SingleProduct from "./components/SingleProduct";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-
+import { Shipment } from "./pages/addtocart/Shipmentpage";
+import { Payment } from "./pages/addtocart/Payment";
+import { OtpInput } from "./pages/addtocart/Orderdone";
 function App() {
+  const val = Math.floor(1000 + Math.random() * 9000);
+  const Handleinput = (otp) => {
+    console.log(otp.join(""), "recvieved");
+  };
   return (
     <div className="App">
       <Navbar />
@@ -20,6 +26,17 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/cart/*" element={<Cartpage />}></Route>
         <Route path="/cart/information" element={<Information />}></Route>
+        <Route path="/cart/information/shipment" element={<Shipment />}></Route>
+        <Route
+          path="/cart/information/shipment/payment"
+          element={<Payment />}
+        ></Route>
+        <Route
+          path="/cart/information/shipment/payment/orderdone"
+          element={
+            <OtpInput totalInputs={4} onChange={Handleinput} val={val} />
+          }
+        ></Route>
         <Route path="/products" element={<WomensPage />}></Route>
         <Route path="/products/:id" element={<SingleProduct />}></Route>
         <Route path="/singleProduct" element={<ProductPage />}></Route>
