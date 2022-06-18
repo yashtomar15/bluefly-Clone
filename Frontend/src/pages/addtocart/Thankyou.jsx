@@ -8,6 +8,7 @@ export const Thankyou = () => {
         setTimeout(()=>{
             navigate("/",{replace:"true"})
             localStorage.clear();
+            window.location.reload(false);
         },6000)
     },[])
   return (

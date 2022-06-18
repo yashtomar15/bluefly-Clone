@@ -4,6 +4,7 @@ import{Topcart,Topcart2,Br,Firstcont,Checkoutbutton,Updatebutton,Forbuttons,Forb
 import{Firstcartlist} from "./firstcartlist"
 import{removecart,addcartdata} from "../../Redux/addtocart/action"
 import { useNavigate } from "react-router-dom";
+
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import{Information} from "./Information"
@@ -14,6 +15,7 @@ export const Cartpage=()=>{
     const[render,setrender]=React.useState(0)
     const [value,setvalue]=React.useState(1)
     const {cartdata,updateddata,total}=useSelector((state)=>state)
+
     const navigate=useNavigate()
     // console.log(cartdata.length)
     console.log(cartdata,"this is cart data")
@@ -42,11 +44,16 @@ export const Cartpage=()=>{
         </Topcart2>
         <Br></Br>
         <div style={{marginTop:"10%"}}>
-        {
-           cartdata.map((ele)=>{
-            return <Firstcartlist {...ele} key={ele._id} func={removing}/>
-        })
-    }
+            <>{(cartdata.length)>0 ?
+            <div>
+                                    {
+                        cartdata.map((ele)=>{
+                         return <Firstcartlist {...ele} key={ele._id} func={removing}/>
+                     })
+                 }
+            </div>
+:""}</>
+
      <Br></Br>
         </div>
         <Totalcontainer>
