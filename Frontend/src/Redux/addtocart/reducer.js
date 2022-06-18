@@ -4,6 +4,8 @@ import {
   Removecart,
   Myaddress,
   Mycoupon,
+  SET_USER_TOKEN,
+  DELETE_TOKEN,
 } from "./actiontypes";
 import { Loaddata, Savedata } from "../../utils/localstorage";
 
@@ -13,6 +15,7 @@ const initState = {
   total: Loaddata("total") || 0,
   address1: Loaddata("address") || {},
   coupon: Loaddata("coupon") || 0,
+  token: null,
 };
 
 export const cartreducer = (state = initState, action) => {
@@ -95,6 +98,18 @@ export const cartreducer = (state = initState, action) => {
       return {
         ...state,
         coupon: 1,
+      };
+    }
+    case SET_USER_TOKEN: {
+      return {
+        ...state,
+        token: action.payload,
+      };
+    }
+    case DELETE_TOKEN: {
+      return {
+        ...state,
+        token: null,
       };
     }
     default: {

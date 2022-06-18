@@ -8,10 +8,16 @@ import AddressForm from "./components/AddressForm";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const Information = () => {
   const state = useSelector((state) => state);
-
+  const navigate = useNavigate();
+  console.log(state);
+  if (!state.token) {
+    navigate("/login");
+    console.log(state.token);
+  }
   console.log(state);
   return (
     <>

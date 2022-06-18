@@ -18,30 +18,35 @@ function App() {
     console.log(otp.join(""), "recvieved");
   };
   return (
-    <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/cart/*" element={<Cartpage />}></Route>
-        <Route path="/cart/information" element={<Information />}></Route>
-        <Route path="/cart/information/shipment" element={<Shipment />}></Route>
-        <Route
-          path="/cart/information/shipment/payment"
-          element={<Payment />}
-        ></Route>
-        <Route
-          path="/cart/information/shipment/payment/orderdone"
-          element={
-            <OtpInput totalInputs={4} onChange={Handleinput} val={val} />
-          }
-        ></Route>
-        <Route path="/products" element={<WomensPage />}></Route>
-        <Route path="/products/:id" element={<SingleProduct />}></Route>
-        <Route path="/singleProduct" element={<ProductPage />}></Route>
-      </Routes>
-      {/* <WomensPage/> */}
+    <div className="wrapper">
+      <div className="container">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/cart/*" element={<Cartpage />}></Route>
+          <Route path="/cart/information" element={<Information />}></Route>
+          <Route
+            path="/cart/information/shipment"
+            element={<Shipment />}
+          ></Route>
+          <Route
+            path="/cart/information/shipment/payment"
+            element={<Payment />}
+          ></Route>
+          <Route
+            path="/cart/information/shipment/payment/orderdone"
+            element={
+              <OtpInput totalInputs={4} onChange={Handleinput} val={val} />
+            }
+          ></Route>
+          <Route path="/products" element={<WomensPage />}></Route>
+          <Route path="/products/:id" element={<SingleProduct />}></Route>
+          <Route path="/singleProduct" element={<ProductPage />}></Route>
+        </Routes>
+        {/* <WomensPage/> */}
+      </div>
     </div>
   );
 }

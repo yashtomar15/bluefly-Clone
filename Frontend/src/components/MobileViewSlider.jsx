@@ -16,10 +16,10 @@ const MobileViewSlider = ({ images }) => {
     <div className={styles.mobile_view_wrapper}>
       <Slider {...settings}>
         {images.length > 0 &&
-          images.map((item) => {
+          images.map((item, i) => {
             return (
-              <div key={item.id} className={styles.imgBox}>
-                <img src={item.img} alt="" />
+              <div key={i} className={styles.imgBox}>
+                <img src={item} alt="" />
               </div>
             );
           })}

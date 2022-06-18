@@ -42,7 +42,7 @@ export const WomensOne = (items) => {
         {/* <p className='brand'> {brand},{color1},{color2 && color2}{sizes},condition_{condition},extra off</p> */}
         <div>
           <p className={styles.brand}> {brand}</p>
-          <Link to={`/products/${title}`}>
+          <Link to={`/products/${_id}`}>
             <p className={styles.title}>{title}</p>
           </Link>
           <p className={styles.price}>

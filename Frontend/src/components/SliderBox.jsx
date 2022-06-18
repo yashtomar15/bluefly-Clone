@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,23 +14,32 @@ const SliderBox = ({ handleZoomInOut, images }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  const [rerender, setRerender] = useState(false);
+
+  useEffect(() => {
+    setRerender(!rerender);
+  }, [images]);
+
+  console.log(images, "Slider BOx");
   return (
     <div className={styles.full_width}>
-      <div className={styles.s_wrapper}>
-        <div onClick={handleZoomInOut} className={styles.cancel}>
-          <CloseIcon></CloseIcon>
-        </div>
-        <Slider {...settings}>
-          {images.length > 0 &&
-            images.map((item) => {
+      {images.length > 0 && (
+        <div className={styles.s_wrapper}>
+          <div onClick={handleZoomInOut} className={styles.cancel}>
+            <CloseIcon></CloseIcon>
+          </div>
+          <Slider {...settings}>
+            {images.map((item, i) => {
               return (
-                <div key={item.id} className={styles.imgBox}>
-                  <img src={item.img} alt="" />
+                <div key={i} className={styles.imgBox}>
+                  <div style={{ color: "white" }}>HI</div>
+                  <img src={`${item}`} alt="" />
                 </div>
               );
             })}
-        </Slider>
-      </div>
+          </Slider>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setToken } from "../Redux/addtocart/action";
 import styles from "../styles/Login.module.css";
 import ResetPassword from "./ResetPassword";
 
@@ -7,6 +9,7 @@ const Login = () => {
   const [loginData, setLoginData] = useState({});
   const [resetStaus, setResetStaus] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const toogleResetStatus = () => {
     setResetStaus(!resetStaus);
   };
@@ -19,14 +22,25 @@ const Login = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(loginData);
-    let res = await fetch("https://blueflyapp.herokuapp.com/Auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(loginData),
-    });
-    let data = await res.json();
-    console.log(data);
+    try {
+      let res = await fetch("https://blueflyapp.herokuapp.com/Auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(loginData),
+      });
+      let data = await res.json();
+      console.log(data);
+      if (data.status == 400) {
+        alert(data.response);
+        return;
+      }
+      localStorage.setItem("token", JSON.stringify(data.token));
+      dispatch(setToken(data.token));
+      alert(data.response);
+      navigate("/");
+    } catch (e) {
+      console.log(e);
+    }
   };
   return (
     <div className={styles.login_wrapper}>

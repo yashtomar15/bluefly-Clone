@@ -13,7 +13,7 @@ export const WomensPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://blueflyapp.herokuapp.com/Data/Women's")
+      .get("https://blueflyapp.herokuapp.com/Data/")
       .then(({ data }) => {
         setData(data);
         console.log(data);

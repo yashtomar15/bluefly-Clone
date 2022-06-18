@@ -14,12 +14,14 @@ const Signup = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(signUpData);
     let res = await fetch("https://blueflyapp.herokuapp.com/Auth/signup", {
       method: "POST",
-      headers: { "Content-Type": "application/jspn" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(signUpData),
     });
     let data = await res.json();
+    console.log(data);
     if (data.response == "Account created succesfully") {
       alert(data.response);
       navigate("/login");

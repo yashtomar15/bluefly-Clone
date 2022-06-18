@@ -5,7 +5,6 @@ import { addcartdata } from "../Redux/addtocart/action";
 export const Productlist = (ele) => {
   const { cartdata } = useSelector((state) => state);
 
-  console.log(cartdata);
   const dispatch = useDispatch();
   return (
     <div>
