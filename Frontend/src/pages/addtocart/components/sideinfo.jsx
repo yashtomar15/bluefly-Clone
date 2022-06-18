@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import{Sideinfodiv,Sideinfodivcont,Br,Forbuttons2} from "../styled"
 import{Loaddata,Savedata} from "../../../utils/localstorage"
+import{mycoupon} from "../../../Redux/addtocart/action"
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Badge from '@mui/material/Badge';
@@ -9,6 +10,7 @@ import Badge from '@mui/material/Badge';
 
 export const Sideinfo = () => {
     const state=useSelector((state)=>state)
+    const dispatch=useDispatch()
     let img=state.cartdata[0].images1["main"]
     const[input,setinput]=React.useState("")
     const shapeStyles = { bgcolor: `${img}`, width: 80, height: 80 };
@@ -16,7 +18,8 @@ export const Sideinfo = () => {
     console.log(state)
 
     const applycopoun=()=>{
-        if(input=="get10off")
+        console.log(state.coupon)
+        if(input=="get10off" && state.coupon==0)
         {
             console.log(input)
             const data=Loaddata("total");
@@ -24,10 +27,11 @@ export const Sideinfo = () => {
             console.log(newtotal)
             Savedata("total",newtotal)
             alert("10% off coupon applied successfully")
+            dispatch(mycoupon(1))
             window.location.reload(false)
 
         }
-        else if(input=="firstorder20")
+        else if(input=="firstorder20" && state.coupon==0)
         {
             console.log(input)
             const data=Loaddata("total");
@@ -35,9 +39,10 @@ export const Sideinfo = () => {
             console.log(newtotal)
             Savedata("total",newtotal)
             alert(" 20% off coupon applied successfully")
+            dispatch(mycoupon(1))
             window.location.reload(false)
         }
-        else if(input=="welcome30")
+        else if(input=="welcome30" && state.coupon==0)
         {
             console.log(input)
             const data=Loaddata("total");
@@ -45,7 +50,12 @@ export const Sideinfo = () => {
             console.log(newtotal)
             Savedata("total",newtotal)
             alert(" 30% off coupon applied successfully")
+            dispatch(mycoupon(1))
             window.location.reload(false)
+        }
+        else if(state.coupon==1)
+        {
+            alert("Coupon already applied")
         }
     }
   return (

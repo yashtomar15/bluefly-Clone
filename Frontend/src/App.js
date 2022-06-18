@@ -7,11 +7,17 @@ import{Information} from "./pages/addtocart/Information"
 import{Shipment} from "./pages/addtocart/Shipmentpage"
 import{Payment} from "./pages/addtocart/Payment"
 import{OtpInput} from "./pages/addtocart/Orderdone"
+import{Thankyou} from "./pages/addtocart/Thankyou"
+import{useNavigate} from "react-router-dom"
 function App() {
-
+const navigate=useNavigate()
   const val=Math.floor(1000 + Math.random() * 9000);
   const Handleinput=(otp)=>{
     console.log(otp.join(""),"recvieved")
+    if(otp.join("")==val)
+    {
+      navigate("/cart/information/shipment/payment/orderdone/thankyou")
+    }
   }
   return <div className="App">
     <Navbar/>
@@ -25,6 +31,8 @@ function App() {
       <Route path="/cart/information/shipment" element={<Shipment/>}></Route>
       <Route path="/cart/information/shipment/payment" element={<Payment/>}></Route>
       <Route path="/cart/information/shipment/payment/orderdone" element={<OtpInput totalInputs={4} onChange={Handleinput} val={val}/>}></Route>
+      <Route path="/cart/information/shipment/payment/orderdone/thankyou" element={<Thankyou/>}></Route>
+
     </Routes>
   </div>;
 }

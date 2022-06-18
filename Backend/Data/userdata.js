@@ -30,6 +30,23 @@ console.log(req.query)
     res.status(200).send(data1)
 })
 
+//for sorting
+Userdata.get("/sortasc/Men's",async(req,res)=>{
+    const data1=await bluesky.sort({category:{$regex:"Men's"},price:-1})
+    res.send(data1)
+})
+Userdata.get("/sortasc/Women's",async(req,res)=>{
+    const data1=await bluesky.find({category:{$regex:"Women's",$options:"i"},price:-1})
+    res.send(data1)
+})
+Userdata.get("/sortdes/Men's",async(req,res)=>{
+    const data1=await bluesky.sort({category:{$regex:"Men's"},price:1})
+    res.send(data1)
+})
+Userdata.get("/sortdes/Women's",async(req,res)=>{
+    const data1=await bluesky.find({category:{$regex:"Women's",$options:"i"},price:1})
+    res.send(data1)
+})
 
 //for filtering
 
@@ -42,6 +59,12 @@ Userdata.get("/filter",async(req,res)=>{
         let data1=await bluesky.find({category:req.query.category})
         console.log(data1)
         return res.send(data1)
+    }
+    ////http://localhost:8080/Data/filter?id="asasawadsadsda"
+    else if(req.query.id)
+    {
+        let data=await bluesky.findById(req.query.id)
+        return res.send(data)
     }
     //http://localhost:8080/Data/filter?color=white|| red|| green ||grey ;
     else if(req.query.color)

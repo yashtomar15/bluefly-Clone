@@ -1,4 +1,4 @@
-import{AddtocartData,ToalandQuant,Removecart,Myaddress} from "./actiontypes"
+import{AddtocartData,ToalandQuant,Removecart,Myaddress,Mycoupon} from "./actiontypes"
 import{Loaddata,Savedata} from "../../utils/localstorage"
 
 
@@ -6,15 +6,16 @@ const initState={
     cartdata:Loaddata("cart")||[],
     updateddata:Loaddata("modified")||[],
     total:Loaddata("total")||0,
-    address1:Loaddata("address")||{}
+    address1:Loaddata("address")||{},
+    coupon:Loaddata("coupon")||0
 }
 
 export const cartreducer=(state=initState,action)=>{
     switch(action.type)
     {
         case AddtocartData:{
-
-            let newdata=[...state.cartdata,action.payload]
+            let data=Loaddata("cart")||[]
+            let newdata=[...data,action.payload]
             Savedata("cart",newdata)
             return{
                 ...state,
@@ -91,6 +92,13 @@ export const cartreducer=(state=initState,action)=>{
             return{
                 ...state,
                 address1:action.payload
+            }
+        }
+        case Mycoupon:{
+            Savedata("coupon",1)
+            return{
+                ...state,
+                coupon:1
             }
         }
         default:{

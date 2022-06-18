@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector,useDispatch } from "react-redux";
 import{Topcart,Topcart2,Br,Firstcont,Checkoutbutton,Updatebutton,Forbuttons,Forbuttons1,Totalcontainer,Removebutton} from "./styled";
 import{Firstcartlist} from "./firstcartlist"
-import{removecart} from "../../Redux/addtocart/action"
+import{removecart,addcartdata} from "../../Redux/addtocart/action"
 import { useNavigate } from "react-router-dom";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -16,7 +16,7 @@ export const Cartpage=()=>{
     const {cartdata,updateddata,total}=useSelector((state)=>state)
     const navigate=useNavigate()
     // console.log(cartdata.length)
-    // console.log(cartdata,"this is cart data")
+    console.log(cartdata,"this is cart data")
     // console.log(updateddata,"this i updated data")
     // console.log(total,"my toal cart price")
     const dispatch=useDispatch()
@@ -52,7 +52,7 @@ export const Cartpage=()=>{
         <Totalcontainer>
                 <div>
                 </div>
-                <div>
+                <div style={{marginRight:"4%"}}>
                         <Forbuttons1>
                             <p>SUBTOTAL</p>
                             <p>${total}</p>
