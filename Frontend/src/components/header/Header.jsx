@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import CustomizedBadges from "../../Navbar/carticon" 
+import CustomizedBadges from "../../Navbar/carticon";
 import {
   faMagnifyingGlass,
   faBagShopping,
@@ -11,11 +11,12 @@ import bg from "../../assets/bg.webp";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import NavbarPopup from "../navbarComponent/NavbarPopup";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [hoverState, setHoverState] = useState("");
   const [inputs, setInputs] = useState(false);
-
+  const { token } = useSelector((state) => state);
   const handleHover = (type) => {
     setHoverState(type);
   };
@@ -27,9 +28,9 @@ const Header = () => {
   const handleInput = () => {
     setInputs(true);
   };
-  const handleCut= ()=>{
-    setInputs(false)
-  }
+  const handleCut = () => {
+    setInputs(false);
+  };
   return (
     <div className="hContainer">
       <div className="hzin">
@@ -45,10 +46,13 @@ const Header = () => {
           <div className="rightDiv">
             {inputs ? (
               <>
-              <div className="iconDiv1 ? iconDiv">
-                <input type="text" name=""/>
-                <button onClick={handleCut}><FontAwesomeIcon icon={faXmark}/></button>
-                </div></>
+                <div className="iconDiv1 ? iconDiv">
+                  <input type="text" name="" />
+                  <button onClick={handleCut}>
+                    <FontAwesomeIcon icon={faXmark} />
+                  </button>
+                </div>
+              </>
             ) : (
               <div className="iconDiv" onClick={handleInput}>
                 <span>
@@ -59,14 +63,26 @@ const Header = () => {
             )}
 
             <div className="iconDiv">
-              <Link to={"/"}><span>
-                <FontAwesomeIcon className="icons" icon={faUser} />
-              </span>
-              <span>LOG IN</span></Link>
+              {token !== null ? (
+                <span>
+                  <FontAwesomeIcon className="icons" icon={faUser} />
+                </span>
+              ) : (
+                <Link to={"/login"}>
+                  <span>
+                    <FontAwesomeIcon className="icons" icon={faUser} />
+                  </span>
+
+                  <span>LOG IN</span>
+                </Link>
+              )}
             </div>
-            <div className="iconDiv" style={{marginTop:"-10%",display:"flex"}}>
+            <div
+              className="iconDiv"
+              style={{ marginTop: "-10%", display: "flex" }}
+            >
               <Link to={"/cart"}>
-              <CustomizedBadges/>
+                <CustomizedBadges />
               </Link>
             </div>
           </div>

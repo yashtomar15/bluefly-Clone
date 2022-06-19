@@ -43,13 +43,18 @@ export const mycoupon = (payload) => {
 };
 
 export const checkToken = () => {
+  console.log("first");
   let token = JSON.parse(localStorage.getItem("token"));
-  if (token != undefined) {
+  console.log(token);
+  if (token !== null) {
     return {
       type: SET_USER_TOKEN,
       payload: token,
     };
   }
+  return {
+    type: "",
+  };
 };
 
 export const setToken = (payload) => {
