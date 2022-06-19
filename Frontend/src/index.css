@@ -19,10 +19,12 @@ body {
 .slick-prev {
   left: 30%;
   top: 66%;
+  display: none;
   z-index: 99999;
 }
 .slick-next {
   right: 30%;
+  display: none;
   z-index: 9999;
   top: 66%;
 }

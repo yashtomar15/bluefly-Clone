@@ -92,14 +92,10 @@ const Header = () => {
           <div className="navDiv">
             <ul className="navlink">
               <li style={{ marginLeft: "35px" }}>
-                <Link to={"/temp"} onMouseEnter={() => handleHover("CLOTHING")}>
-                  CLOTHING
-                </Link>
+                <Link to={"/mens"}>Mens</Link>
               </li>
               <li>
-                <Link to={"/"} onMouseEnter={() => handleHover("SHOE")}>
-                  SHOES
-                </Link>
+                <Link to={"/womens"}>Womens</Link>
               </li>
               <li>
                 <Link to={"/"} onMouseEnter={() => handleHover("HANDBAG")}>

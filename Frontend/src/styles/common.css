@@ -2,15 +2,17 @@
   left: 25%;
   top: 85%;
   z-index: 99999;
+  display: none;
 }
 .slick-next {
+  display: none;
   right: 25%;
   z-index: 9999;
   top: 85%;
 }
 .slick-prev:before,
 .slick-next:before {
-  font-size: 60px;
+  font-size: 0;
   color: #000;
 }
 

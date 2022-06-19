@@ -1,113 +1,115 @@
-.hContainer{
-    margin-top: 15px;
-    height: 90px;
-    text-align: center!important;
+.hContainer {
+  margin-top: 15px;
+  height: 90px;
+  text-align: center !important;
 }
-.hzin{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    height: 18vh;
+.hzin {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  height: 18vh;
+  background-color: #fff;
+  bottom: 100px;
+}
+.hparent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 18px;
+}
+.himgDiv {
+  text-align: center;
+}
+.himgDiv h1 {
+  margin-bottom: 0px;
+  letter-spacing: 0.15em;
+}
+.himgDiv img {
+  margin-top: 12px;
+  vertical-align: middle;
+  height: 32px;
+  cursor: pointer;
+}
+.rightDiv {
+  margin: auto;
+  vertical-align: middle;
+  margin-left: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 17px 20px;
+}
+.rightDiv div {
+  padding: 0 5px;
+}
+.iconDiv,
+.iconDiv1 {
+  display: flex;
+  letter-spacing: 0.15em;
+  font-family: Futura, sans-serif;
+  font-size: 15px;
+}
+.icons {
+  font-size: 18px;
+  font-weight: lighter;
+}
+.iconDiv span {
+  padding: 2px 5px;
+  color: #303030e7;
+  cursor: pointer;
+}
+.iconDiv1 input {
+  height: 35px;
+}
+.iconDiv1 button {
+  padding: 2px 5px;
+  color: black;
+  cursor: pointer;
+  border: none;
+  width: 20px;
+  height: 35px;
+  background-color: #fff;
+}
+.navDiv {
+  text-align: center;
+}
+
+.navlink {
+  width: 92%;
+  margin: auto;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 0px;
+  display: block;
+}
+.navlink li {
+  text-align: center !important;
+  float: left;
+  margin: 8px 16px;
+  padding: 0 1px 5px;
+  letter-spacing: 0.2em;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.navlink li a {
+  text-decoration: none;
+  color: black;
+}
+.navlink li:hover {
+  border-bottom: 2px solid black;
+}
+
+.positionPop {
+  position: absolute;
+  z-index: -200;
+  background-color: #fff;
+  /* border :10px solid red; */
+}
+
+@media screen and (max-width: 1300px) {
+  .hzin {
+    text-align: center !important;
+    height: 25vh;
     background-color: #fff;
-    bottom: 100px;
+  }
 }
-.hparent{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    margin-top: 18px;
-}
-.himgDiv{
-    text-align: center;
-}
-.himgDiv h1{
-    margin-bottom: 0px;
-    letter-spacing: 0.15em;
-}
-.himgDiv img{
-    margin-top: 12px;
-    vertical-align: middle;
-    height: 32px;
-    cursor: pointer;
-}
-.rightDiv{
-    margin: auto;
-    vertical-align: middle;
-    margin-left: 120px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    padding: 17px 20px;
-}
-.rightDiv div{
-    padding: 0 5px;
-}
-.iconDiv, .iconDiv1{
-    display: flex;
-    letter-spacing: 0.15em;
-    font-family: Futura,sans-serif;
-    font-size: 15px;
-}
-.icons{
-    font-size:18px;
-    font-weight: lighter;
-}
-.iconDiv span{
-    padding: 2px 5px;
-    color: #303030e7;
-    cursor: pointer;
-}
-.iconDiv1 input{
-    height: 35px;
-}
-.iconDiv1 button{
-    padding: 2px 5px;
-    color: black;
-    cursor: pointer;
-    border: none;
-    width: 20px;
-    height: 35px;
-    background-color: #fff;
-}
-.navDiv{
-    text-align: center;
-}
-
-.navlink{
-    width: 92%;
-    margin: auto;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 0px;
-    display: block;
-}
-.navlink li{
-    text-align: center!important;
-    float: left;
-    margin: 8px 16px;
-    padding: 0 1px 5px;
-    letter-spacing: 0.2em;
-    font-size: 13px;
-    font-weight: 400;
-    cursor: pointer;
-}
-.navlink li:hover{
-    border-bottom: 2px solid black;
-}
-
-.positionPop{
-    position: absolute;
-    z-index: -200;
-    background-color: #fff;
-    /* border :10px solid red; */
-}
-
-@media screen and ( max-width: 1300px){
-    .hzin{
-        text-align: center!important;
-        height: 25vh;
-        background-color: #fff;
-    }
-
-}
-
-
