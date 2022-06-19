@@ -2,16 +2,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Futura, sans-serif;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.links > *{
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  max-width: 1260px;
+  margin: auto;
+}
+.slick-prev {
+  left: 30%;
+  top: 66%;
+  display: none;
+  z-index: 99999;
+}
+.slick-next {
+  right: 30%;
+  display: none;
+  z-index: 9999;
+  top: 66%;
+}
+
+.links > * {
   margin-right: 10%;
 }
-#filled-number{
-  background:white;
+#filled-number {
+  background: white;
   border: 1px solid silver;
-  height:1px;
+  height: 1px;
   text-align: center;
 }
-
