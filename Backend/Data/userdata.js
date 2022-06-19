@@ -75,6 +75,9 @@ Userdata.get("/filter", async (req, res) => {
       });
       console.log(data1);
       return res.send(data1);
+    } else if (req.query.id) {
+      let data = await bluesky.findById(req.query.id);
+      return res.send(data);
     }
     //http://localhost:8080/Data/filter?womensbrand=polo||canvas||nike
     else if (req.query.womensbrand) {
@@ -176,28 +179,28 @@ Userdata.get("/sortwomens", async (req, res) => {
     //http://localhost:8080/Data/sortwomens?title=inc
     if (title && title === "inc") {
       let data = await bluesky
-        .find({ category: ["Women's wear", "Women's jeans"] })
+        .find({ category: { $regex: "women's", $options: "i" } })
         .sort({ title: 1 });
       res.send(data);
     }
     //http://localhost:8080/Data/sortwomens?title=dec
     else if (title && title === "dec") {
       let data = await bluesky
-        .find({ category: ["Women's wear", "Women's jeans"] })
+        .find({ category: { $regex: "women's", $options: "i" } })
         .sort({ title: -1 });
       res.send(data);
     }
     //http://localhost:8080/Data/sortwomens?price=inc
     else if (price && price === "inc") {
       let data = await bluesky
-        .find({ category: ["Women's wear", "Women's jeans"] })
+        .find({ category: { $regex: "women's", $options: "i" } })
         .sort({ price: 1 });
       res.send(data);
     }
     //http://localhost:8080/Data/sortwomens?price=dec
     else if (price && price === "dec") {
       let data = await bluesky
-        .find({ category: ["Women's wear", "Women's jeans"] })
+        .find({ category: { $regex: "women's", $options: "i" } })
         .sort({ price: -1 });
       res.send(data);
     }
@@ -213,28 +216,28 @@ Userdata.get("/sortmens", async (req, res) => {
     //http://localhost:8080/Data/sortmens?title=inc
     if (title && title === "inc") {
       let data = await bluesky
-        .find({ category: ["Men's Shirt", "Men's Pant"] })
+        .find({ category: { $regex: "men's", $options: "i" } })
         .sort({ title: 1 });
       res.send(data);
     }
     //http://localhost:8080/Data/sortmens?title=dec
     else if (title && title === "dec") {
       let data = await bluesky
-        .find({ category: ["Men's Shirt", "Men's Pant"] })
+        .find({ category: { $regex: "men's", $options: "i" } })
         .sort({ title: -1 });
       res.send(data);
     }
     //http://localhost:8080/Data/sortmens?price=inc
     else if (price && price === "inc") {
       let data = await bluesky
-        .find({ category: ["Men's Shirt", "Men's Pant"] })
+        .find({ category: { $regex: "men's", $options: "i" } })
         .sort({ price: 1 });
       res.send(data);
     }
     //http://localhost:8080/Data/sortmens?price=dec
     else if (price && price === "dec") {
       let data = await bluesky
-        .find({ category: ["Men's Shirt", "Men's Pant"] })
+        .find({ category: { $regex: "men's", $options: "i" } })
         .sort({ price: -1 });
       res.send(data);
     }

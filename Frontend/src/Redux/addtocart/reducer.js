@@ -29,6 +29,13 @@ export const cartreducer = (state = initState, action) => {
         cartdata: newdata,
       };
     }
+    case Mycoupon: {
+      Savedata("coupon", 1);
+      return {
+        ...state,
+        coupon: 1,
+      };
+    }
 
     case ToalandQuant: {
       console.log(action.payload, "inreducer");
@@ -85,7 +92,6 @@ export const cartreducer = (state = initState, action) => {
         total: sum,
       };
     }
-
     case Myaddress: {
       Savedata("address", action.payload);
       return {
@@ -93,13 +99,7 @@ export const cartreducer = (state = initState, action) => {
         address1: action.payload,
       };
     }
-    case Mycoupon: {
-      Savedata("coupon", 1);
-      return {
-        ...state,
-        coupon: 1,
-      };
-    }
+
     case SET_USER_TOKEN: {
       return {
         ...state,

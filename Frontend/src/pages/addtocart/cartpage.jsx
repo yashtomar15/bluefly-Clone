@@ -13,8 +13,10 @@ import {
   Removebutton,
 } from "./styled";
 import { Firstcartlist } from "./firstcartlist";
-import { removecart } from "../../Redux/addtocart/action";
+import { removecart, addcartdata } from "../../Redux/addtocart/action";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/header/Header";
+
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Information } from "./Information";
@@ -31,12 +33,19 @@ export const Cartpage = () => {
   // console.log(total,"my toal cart price")
   const dispatch = useDispatch();
 
+  // console.log(cartdata.length)
+  // console.log(cartdata,"this is cart data")
+  // console.log(updateddata,"this i updated data")
+  // console.log(total,"my toal cart price")
+  // const dispatch=useDispatch()
+
   const removing = (_id) => {
     dispatch(removecart(_id));
     setrender(render + 1);
   };
   return (
     <>
+      <Header />
       <Topcart>
         <p className="p1">CART</p>
         <p>Continue shopping</p>
@@ -52,14 +61,23 @@ export const Cartpage = () => {
       </Topcart2>
       <Br></Br>
       <div style={{ marginTop: "10%" }}>
-        {cartdata.map((ele) => {
-          return <Firstcartlist {...ele} key={ele._id} func={removing} />;
-        })}
+        <>
+          {cartdata.length > 0 ? (
+            <div>
+              {cartdata.map((ele) => {
+                return <Firstcartlist {...ele} key={ele._id} func={removing} />;
+              })}
+            </div>
+          ) : (
+            ""
+          )}
+        </>
+
         <Br></Br>
       </div>
       <Totalcontainer>
         <div></div>
-        <div>
+        <div style={{ marginRight: "4%" }}>
           <Forbuttons1>
             <p>SUBTOTAL</p>
             <p>${total}</p>

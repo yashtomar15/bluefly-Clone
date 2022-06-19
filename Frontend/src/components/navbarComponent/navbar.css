@@ -1,0 +1,149 @@
+.cContainer{
+    text-align: center!important;
+    align-items: center!important;
+}
+
+.cParent{
+    position: fixed;
+    z-index: 100;
+    top: 120px;
+    width: 100vw;
+    margin: auto;
+    background-color: #fff;
+}
+.innercParent{
+    width: 45%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+.cimgDiv{
+    text-align: left;
+}
+.cimgDiv p{
+    font-size: 13px;
+    line-height: 2.1;
+}
+.cimgDiv h3{
+    font-size: 16px;
+    margin: 15px 0 2px;
+    font-weight: 450;
+}
+.clothCom{
+    text-align: left; 
+}
+.clothCom h4{
+    letter-spacing: 0.25em;
+    font-size: 13px;
+    margin: 15px 0;
+}
+.clothCom p{
+    font-size: 13.5px;
+    line-height: 2.1;
+    font-weight: 400;
+}
+
+/*shoe design*/
+
+.innersParent{
+    width: 93%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 35px;
+}
+.cimgDiv img{
+    margin-top: 10px;
+}
+/*Handbags desgin*/
+.innerhParent{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 35px;
+}
+/*Beauty Design*/
+.innerbeParent{
+    width: 48%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+/*Under 50 desgin*/
+.inneruParent{
+    width: 48%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 35px;
+}
+/*Sunglass design*/
+.innersuParent{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+/*Clearance desgin*/
+.innerclParent{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+
+/*jew And watch desgin*/
+.innerjwParent{
+    width: 84%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+.jwDiv{
+    margin-left: -30px;
+}
+.jwCom{
+    margin-left: -130px;
+
+}
+.watAZ{
+    display: flex;
+    gap:80px;
+}
+
+/*Desiner style*/
+.innerdesParent{
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 240px 450px 100px;
+    gap: 25px;
+}
+
+.featDiv{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 35px;
+}
+.DesAZ{
+    display: grid;
+    grid-template-columns: 55px 55px 55px 55px;
+    grid-template-rows: repeat(7,1fr);
+}
+@media screen and ( max-width: 1300px){
+    .cParent{
+        top: 170px;
+    }
+}
+
+@media screen and ( max-width: 1050px){
+    .cParent .cimgDiv{
+        display: none;
+    }
+}
