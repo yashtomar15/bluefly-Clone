@@ -19,6 +19,10 @@ import SingleProduct from "./components/SingleProduct";
 import { RequiredAuth } from "./components/RequiredAuth";
 import { useDispatch } from "react-redux";
 import { checkToken } from "./Redux/addtocart/action";
+import SliderBox from './components/SliderBox';
+import MobileViewSlider from "./components/MobileViewSlider";
+import {ImageSlider} from './components/ImageSlider';
+
 function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -35,8 +39,9 @@ function App() {
   return (
     <div className="App">
       <Header />
+      
       <Routes>
-        <Route path="/" element={<Forhome />}></Route>
+        <Route path="/" element={<ImageSlider />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/mens" element={<MensPage />}></Route>
@@ -45,8 +50,8 @@ function App() {
         <Route path="/mens/:id" element={<SingleProduct />}></Route>
         <Route path="/temp" element={<Homepage />}></Route>
         <Route path="/cart/*" element={<Cartpage />}></Route>
-        <Route
-          path="/cart/information"
+        <Route path="/slider" element={<MobileViewSlider />}></Route>
+        <Route  path="/cart/information"
           element={
             <RequiredAuth>
               <Information />
