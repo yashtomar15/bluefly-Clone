@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
+// import axios from "axios";
+import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { Homepage } from "./pages/Homepage";
 import { Cartpage } from "./pages/addtocart/cartpage";
@@ -22,6 +24,7 @@ import { checkToken } from "./Redux/addtocart/action";
 import SliderBox from './components/SliderBox';
 import MobileViewSlider from "./components/MobileViewSlider";
 import {ImageSlider} from './components/ImageSlider';
+import {Reminder} from './components/reminder/reminder';
 
 function App() {
   const navigate = useNavigate();
@@ -36,10 +39,11 @@ function App() {
   useEffect(() => {
     dispatch(checkToken());
   });
+
   return (
     <div className="App">
       <Header />
-      
+
       <Routes>
         <Route path="/" element={<ImageSlider />}></Route>
         <Route path="/login" element={<Login />}></Route>
