@@ -1,0 +1,105 @@
+.dressDiv{
+    width: 95%;
+    margin: auto;
+    margin-top: -550px;
+}
+.woDiv{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 18px;
+    color: white;
+    font-size: 16px;
+}
+
+.dress{
+    background-image: url(../assets/womentop.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.bautique{
+    background-image: url(../assets/WEB_ASSET_2_540x.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.top{
+    background-image: url(../assets/womens_tops_2_540x.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+}
+
+.cwoDiv{
+    margin-top: 130px;
+    line-height: 2;
+    padding: 35px;
+}
+.cwoDiv h2{
+    letter-spacing: 0.43em;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.cwoDiv2{
+    margin-top: 160px;
+    line-height: 2;
+    padding: 35px;
+}
+.cwoDiv2 h2{
+    letter-spacing: 0.2em;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.cwoDiv h1{
+    font-size: 2.8em;
+}
+.cwoDiv2 h1{
+    font-size: 2.8em;
+}
+.cwoDiv h3{
+    line-height: 1.5;
+}
+.cwoDiv2 h3{
+    line-height: 1.5;
+}
+.cwoDiv button{
+    border: none;
+    margin: 30px 10px;
+    width: 50%;
+    height: 42px;
+    color: black;
+    font-weight: 750;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+.cwoDiv2 button{
+    border: none;
+    margin: 30px 10px;
+    width: 230px;
+    height: 42px;
+    color: black;
+    font-weight: 750;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+.hDiv{
+    text-align: center;
+    margin-top: 30px;
+}

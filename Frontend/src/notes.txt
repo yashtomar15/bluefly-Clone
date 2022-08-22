@@ -1,2 +1,13 @@
 for add to cart UI:
 github repo: https://github.com/Teju0910/bluefly-clone-frontend
+
+Improvements: 
+1. create homepage
+2. On product page item should be view onClicking image or whole Div
+3. onClicking on item should be store on redux store and will show cart UI.
+4. Navbar- onMouseOut from navbar it should hide the popup.
+
+
+
+Deploy link should be: 
+https://bluefly-cw67.netlify.app

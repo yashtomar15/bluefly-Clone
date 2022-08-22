@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 // import axios from "axios";
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import { Homepage } from "./pages/Homepage";
+import { Homepage } from "./pages/Homepage/Homepage";
 import { Cartpage } from "./pages/addtocart/cartpage";
 import { Navbar } from "./Navbar/navbar";
 import { Information } from "./pages/addtocart/Information";
@@ -11,7 +11,6 @@ import { Payment } from "./pages/addtocart/Payment";
 import { OtpInput } from "./pages/addtocart/Orderdone";
 import { Thankyou } from "./pages/addtocart/Thankyou";
 import { useNavigate } from "react-router-dom";
-import { Forhome } from "./forhome";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Header from "./components/header/Header";
@@ -24,7 +23,7 @@ import { checkToken } from "./Redux/addtocart/action";
 import SliderBox from './components/SliderBox';
 import MobileViewSlider from "./components/MobileViewSlider";
 import {ImageSlider} from './components/ImageSlider';
-import {Reminder} from './components/reminder/reminder';
+// import {Reminder} from './components/reminder/reminder';
 
 function App() {
   const navigate = useNavigate();
@@ -45,14 +44,13 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<ImageSlider />}></Route>
+        <Route path="/" element={<Homepage />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/mens" element={<MensPage />}></Route>
         <Route path="/womens" element={<WomensPage />}></Route>
         <Route path="/womens/:id" element={<SingleProduct />}></Route>
         <Route path="/mens/:id" element={<SingleProduct />}></Route>
-        <Route path="/temp" element={<Homepage />}></Route>
         <Route path="/cart/*" element={<Cartpage />}></Route>
         <Route path="/slider" element={<MobileViewSlider />}></Route>
         <Route  path="/cart/information"
