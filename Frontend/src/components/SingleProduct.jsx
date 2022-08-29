@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SliderBox from "./SliderBox";
 import styles from "../styles/SingleProduct.module.css";
-import MobileViewSlider from "./MobileViewSlider";
+// import MobileViewSlider from "./MobileViewSlider";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addcartdata } from "../Redux/addtocart/action";
@@ -76,7 +76,7 @@ const SingleProduct = () => {
             </div>
             {images.length > 0 && (
               <div className={styles.mobile_view}>
-                <MobileViewSlider images={images[0]} />
+                {/* <MobileViewSlider images={images[0]} /> */}
               </div>
             )}
           </>

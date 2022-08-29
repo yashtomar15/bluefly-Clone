@@ -85,30 +85,30 @@
 // }
 
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
+// import * as React from 'react';
+// import Box from '@mui/material/Box';
+// import Slider from '@mui/material/Slider';
 
-function valuetext(value) {
-  return `${value}°C`;
-}
+// function valuetext(value) {
+//   return `${value}°C`;
+// }
 
-export default function CustomizedSlider() {
-  const [value, setValue] = React.useState([20, 1000]);
-console.log(value);
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+// export default function CustomizedSlider() {
+//   const [value, setValue] = React.useState([20, 1000]);
+// console.log(value);
+//   const handleChange = (event, newValue) => {
+//     setValue(newValue);
+//   };
 
-  return (
-    <Box sx={{ width: 300 }}>
-      <Slider
-        getAriaLabel={() => 'range'}
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        getAriaValueText={valuetext}
-      />
-    </Box>
-  );
-}
+//   return (
+//     <Box sx={{ width: 300 }}>
+//       <Slider
+//         getAriaLabel={() => 'range'}
+//         value={value}
+//         onChange={handleChange}
+//         valueLabelDisplay="auto"
+//         getAriaValueText={valuetext}
+//       />
+//     </Box>
+//   );
+// }

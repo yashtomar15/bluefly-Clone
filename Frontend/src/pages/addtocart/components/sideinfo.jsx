@@ -18,7 +18,7 @@ export const Sideinfo = () => {
 
   const applycopoun = () => {
     console.log(state.coupon);
-    if (input == "get10off" && state.coupon == 0) {
+    if (input === "get10off" && state.coupon == 0) {
       console.log(input);
       const data = Loaddata("total");
       let newtotal = data - data * 0.1;
@@ -27,7 +27,7 @@ export const Sideinfo = () => {
       alert("10% off coupon applied successfully");
       dispatch(mycoupon(1));
       // window.location.reload(false)
-    } else if (input == "firstorder20" && state.coupon == 0) {
+    } else if (input === "firstorder20" && state.coupon === 0) {
       console.log(input);
       const data = Loaddata("total");
       let newtotal = data - data * 0.2;

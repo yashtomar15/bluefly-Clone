@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "@mui/material";
+// import { Fade } from "@mui/material";
 import Clothing from "./Clothing";
 import Shoe from "./Shoe";
 import Handbags from "./Handbags";
@@ -13,7 +13,7 @@ import { Clearance } from "./Clearance";
 const NavbarPopup = ({ type }) => {
   console.log(type)
   return (
-    <Fade in={!!type}  >
+    // <Fade in={!!type}  >
       <div>
         {type === "CLOTHING" && <Clothing />}
         {type === "SHOE" && <Shoe />}
@@ -25,7 +25,7 @@ const NavbarPopup = ({ type }) => {
         {type === "BEAUTY" && <Beauty />}
         {type === "CLEARANCE" && <Clearance />}
       </div>
-    </Fade>
+    // </Fade>
   );
 };
 

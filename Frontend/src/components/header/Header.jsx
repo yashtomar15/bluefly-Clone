@@ -34,12 +34,12 @@ const Header = () => {
   return (
     <div className="hContainer">
       <div className="hzin">
-        <div className="hparent">
+        <div className="hparent" onClick={handleNoHover}>
           <div></div>
           <div className="himgDiv">
             <h1>
               <Link to={"/"}>
-                <img src={bg} alt="" />
+                <img src={bg} alt="" style={{width:'200px'}}/>
               </Link>
             </h1>
           </div>
@@ -64,9 +64,11 @@ const Header = () => {
 
             <div className="iconDiv">
               {token !== null ? (
+                <Link to={"/login"}>
                 <span>
                   <FontAwesomeIcon className="icons" icon={faUser} />
                 </span>
+                 </Link>
               ) : (
                 <Link to={"/login"}>
                   <span>
@@ -90,7 +92,7 @@ const Header = () => {
 
         <div>
           <div className="navDiv">
-            <ul className="navlink">
+            <ul className="navlink" >
               <li style={{ marginLeft: "35px" }}>
                 <Link to={"/mens"}>Mens</Link>
               </li>

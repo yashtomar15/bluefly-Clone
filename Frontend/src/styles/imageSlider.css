@@ -16,9 +16,9 @@
             transition: opacity 2s ease-in; */
 }
 
-/* .imageSliderText.load{
+.imageSliderText.load{
     opacity:1;
-} */
+}
 
 .slideContainer{
     position: relative;
@@ -37,12 +37,11 @@
     /* background-repeat: no-repeat; */
     background-position: center;
     cursor: pointer;
-    height: 450px;
-    position: relative;
-    top:-380px
+    height: 320px;
+     margin-top: -320px;
 }
 .slideCon{  
-    margin: 100px 0px;
+    /* margin: 100px 0px; */
     line-height: 1.6;
     color: white;
 }
@@ -69,12 +68,43 @@
     cursor: pointer;
 }
 
-.offerSlider{
+/* .offerSlider{
     background-color: black;
     color: white;
     height: 40px;
     margin-top: 20px;
     padding: 8px;;
-}
+} */
 
+/* slider arrows css  not working*/
 
+/* .slick-prev {
+    left: 3% !important;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 3% !important;
+    z-index: 1;
+  }
+  .react__slick__slider__parent{
+    position : relative;
+  }
+  .react__slick__slider__parent .slick-prev ,
+  .react__slick__slider__parent .slick-prev {
+    position: absolute;
+    top: 50%;
+  }
+
+  .react__slick__slider__parent .slick-prev {
+    color: black;
+    z-index: 1;
+  }
+  .react__slick__slider__parent .slick-next {
+    border-radius: 50%;
+    color: black;
+    z-index: 1;
+  }
+  
+  .react__slick__slider__parent .slick-prev:before, .slick-next:before {
+    color: black;
+  } */

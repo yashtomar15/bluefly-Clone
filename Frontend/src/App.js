@@ -1,10 +1,9 @@
-import React, { useState,useEffect } from "react";
+import React, {useEffect } from "react";
 // import axios from "axios";
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { Homepage } from "./pages/Homepage/Homepage";
 import { Cartpage } from "./pages/addtocart/cartpage";
-import { Navbar } from "./Navbar/navbar";
 import { Information } from "./pages/addtocart/Information";
 import { Shipment } from "./pages/addtocart/Shipmentpage";
 import { Payment } from "./pages/addtocart/Payment";
@@ -21,9 +20,6 @@ import { RequiredAuth } from "./components/RequiredAuth";
 import { useDispatch } from "react-redux";
 import { checkToken } from "./Redux/addtocart/action";
 import SliderBox from './components/SliderBox';
-import MobileViewSlider from "./components/MobileViewSlider";
-import {ImageSlider} from './components/ImageSlider';
-// import {Reminder} from './components/reminder/reminder';
 
 function App() {
   const navigate = useNavigate();
@@ -31,7 +27,7 @@ function App() {
   const val = Math.floor(1000 + Math.random() * 9000);
   const Handleinput = (otp) => {
     console.log(otp.join(""), "recvieved");
-    if (otp.join("") == val) {
+    if (otp.join("") === val) {
       navigate("/cart/information/shipment/payment/orderdone/thankyou");
     }
   };
@@ -42,7 +38,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -52,7 +47,6 @@ function App() {
         <Route path="/womens/:id" element={<SingleProduct />}></Route>
         <Route path="/mens/:id" element={<SingleProduct />}></Route>
         <Route path="/cart/*" element={<Cartpage />}></Route>
-        <Route path="/slider" element={<MobileViewSlider />}></Route>
         <Route  path="/cart/information"
           element={
             <RequiredAuth>
