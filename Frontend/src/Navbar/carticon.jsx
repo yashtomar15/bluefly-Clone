@@ -21,7 +21,7 @@ export default function CustomizedBadges() {
     console.log(state,"carticon")
   return (
     <IconButton aria-label="cart">
-      <StyledBadge badgeContent={state.cartdata.length} color="secondary">
+      <StyledBadge badgeContent={state.cart.cartdata.length} color="secondary">
         <LocalMallIcon />
       </StyledBadge>
     </IconButton>

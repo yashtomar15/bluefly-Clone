@@ -13,9 +13,5 @@ Deploy link should be:
 https://bluefly-cw67.netlify.app
 
 
-mui changes
-
-Fade in Navbarpopup.jsx
-Navbar/carticon.jsx
-ProductPages/MensPage --> acordian 
-ProductPages/WomensPage --> acordian
+for more data reference -->
+https://blueflybackend.herokuapp.com/product/all

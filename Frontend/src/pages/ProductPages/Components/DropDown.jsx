@@ -1,108 +1,128 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./styles/dropdown.css";
 import axios from "axios";
+import { useSelector,useDispatch } from "react-redux";
+import { ADD_MENS_DATA, ADD_WOMENS_DATA ,ADD_PRODUCT_DATA} from "../../../Redux/prodcutPages/actiontypes";
 
 // resuable dropdown
 // sortCategory[0]=sortwomens||sortmens
 // sortCategory[1] = mens || womens
 export const DropDown = ({ filterData, sortCategory }) => {
   const [Value, setValue] = useState("Bestselling");
+  const {productsData,mensData,womensData}=useSelector((state)=>state.products);
+  // console.log(productsData,"productsdata from redux dropdown");
+  const dispatch=useDispatch();
+
+  const filterByCategory=(category)=>{
+    let filterData=productsData.filter((item)=>{
+      let pattern;
+      if(sortCategory[1]==="Men"){
+         pattern=/Men/;
+      }else{
+        pattern=/Women/;
+      }
+      return pattern.test(item.category) && item.Trending===category;
+    })
+    // console.log(filterData,"filter data by category")
+    if(sortCategory[1]==="Men"){
+      dispatch({type:ADD_MENS_DATA,payload:filterData});
+    }else{
+      dispatch({type:ADD_WOMENS_DATA,payload:filterData});
+    }
+  }
+ 
+ const sortByprice=(order)=>{
+  if(order==="inc"){
+    if(sortCategory[1]==="Men"){
+      let sortMensData=mensData.sort((a,b)=>{return Number(a.price)-Number(b.price)});
+      console.log(sortMensData,"sort mensdata by price in inc");
+      dispatch({type:ADD_MENS_DATA,payload:sortMensData});
+    }
+    else{
+     let sortWomensData=womensData.sort((a,b)=>{return Number(a.price)-Number(b.price)});
+     console.log(sortWomensData,"sort Womensdata by price in inc");
+     dispatch({type:ADD_WOMENS_DATA,payload:sortWomensData});
+   }
+  }else if(order==="dec"){
+    if(sortCategory[1]==="Men"){
+      let sortMensData=mensData.sort((a,b)=>{return Number(b.price)-Number(a.price)});
+      console.log(sortMensData,"sort mensdata by price in dec");
+      dispatch({type:ADD_MENS_DATA,payload:sortMensData});
+    }
+    else{
+     let sortWomensData=womensData.sort((a,b)=>{return Number(b.price)-Number(a.price)});
+     console.log(sortWomensData,"sort Womensdata by price in dec");
+     dispatch({type:ADD_WOMENS_DATA,payload:sortWomensData});
+   }
+  }
+ 
+ }
+
+ const sortByTitle=(order)=>{
+  if(order==='inc'){
+    if(sortCategory[1]==="Men"){
+      let sortMensData=mensData.sort((a,b)=>{return a.title.toLowerCase().charCodeAt()-b.title.toLowerCase().charCodeAt()});
+      console.log(sortMensData,"sort mensdata in inc by title");
+      dispatch({type:ADD_MENS_DATA,payload:sortMensData});
+    }
+    else{
+     let sortWomensData=womensData.sort((a,b)=>{return a.title.toLowerCase().charCodeAt()-b.title.toLowerCase().charCodeAt()});
+     console.log(sortWomensData,"sort Womensdata in inc by title");
+     dispatch({type:ADD_WOMENS_DATA,payload:sortWomensData});
+   }
+  }else if(order==='dec'){ 
+    if(sortCategory[1]==="Men"){
+      let sortMensData=mensData.sort((a,b)=>{return b.title.toLowerCase().charCodeAt()-a.title.toLowerCase().charCodeAt()});
+      console.log(sortMensData,"sort mensdata in dec by title");
+      dispatch({type:ADD_MENS_DATA,payload:sortMensData});
+    }
+    else{
+     let sortWomensData=womensData.sort((a,b)=>{return b.title.toLowerCase().charCodeAt()-a.title.toLowerCase().charCodeAt()});
+     console.log(sortWomensData,"sort Womensdata in dec by title");
+     dispatch({type:ADD_WOMENS_DATA,payload:sortWomensData});
+   }
+  }
+  
+ }
   const handleClick = (e) => {
     let text = e.target.innerText;
     {
       if (text[0] === "B") {
-        axios
-          .get(
-            `https://blueflyapp.herokuapp.com/Data/filter?${sortCategory[1]}trendingcat=best_seller`
-          )
-          .then(({ data }) => {
-            filterData(data);
-          })
-          .catch((err) => {
-            console.log("err occured: ", err);
-          });
+        //  for bestseller
+       filterByCategory('Bestseller');
         setValue("Trending");
         setValue("Bestselling");
       } else if (text[text.length - 1] === "Z") {
-        axios
-          .get(
-            `https://blueflyapp.herokuapp.com/Data/${sortCategory[0]}?title=inc`
-          )
-          .then(({ data }) => {
-            filterData(data);
-            console.log(data);
-          })
-          .catch((err) => {
-            console.log("err occured: ", err);
-          });
+        sortByTitle('inc')
         setValue("Title: A-Z");
       } else if (text[text.length - 1] === "A") {
-        axios
-          .get(
-            `https://blueflyapp.herokuapp.com/Data/${sortCategory[0]}?title=dec`
-          )
-          .then(({ data }) => {
-            filterData(data);
-          })
-          .catch((err) => {
-            console.log("err occured: ", err);
-          });
+        
+        sortByTitle('dec');
         setValue("Title: Z-A");
       } else if (text[text.length - 1] === "D") {
-        axios
-          .get(`https://blueflyapp.herokuapp.com/Data/Women's`)
-          .then(({ data }) => {
-            filterData(data);
-          })
-          .catch((err) => {
-            console.log("err occured: ", err);
-          });
+        if(sortCategory[1]==="Men"){
+          let sortMensData=mensData.sort((a,b)=>{return a.title.toLowerCase().charCodeAt()-b.title.toLowerCase().charCodeAt()});
+          console.log(sortMensData,"sort mensdata");
+          dispatch({type:ADD_MENS_DATA,payload:sortMensData});
+        }
+        else{
+         let sortWomensData=womensData.sort((a,b)=>{return a.title.toLowerCase().charCodeAt()-b.title.toLowerCase().charCodeAt()});
+         console.log(sortWomensData,"sort Womensdata");
+         dispatch({type:ADD_WOMENS_DATA,payload:sortWomensData});
+       }
         setValue("Date: New To Old");
       } else if (text[text.length - 1] === "H") {
-        axios
-          .get(
-            `https://blueflyapp.herokuapp.com/Data/${sortCategory[0]}?price=inc`
-          )
-          .then(({ data }) => {
-            filterData(data);
-          })
-          .catch((err) => {
-            console.log("err occured: ", err);
-          });
+        sortByprice("inc");
         setValue("Price: Low To High");
       } else if (text[text.length - 1] === "W") {
-        axios
-          .get(
-            `https://blueflyapp.herokuapp.com/Data/${sortCategory[0]}?price=dec`
-          )
-          .then(({ data }) => {
-            filterData(data);
-          })
-          .catch((err) => {
-            console.log("err occured: ", err);
-          });
+        sortByprice('dec');
         setValue("Price: High To Low");
       } else if (text[7] === "T") {
-        axios
-          .get(`https://blueflyapp.herokuapp.com/Data/Women's`)
-          .then(({ data }) => {
-            filterData(data);
-          })
-          .catch((err) => {
-            console.log("err occured: ", err);
-          });
+        // discount is not present in data.
+        sortByprice('dec');
         setValue("Discount: High To Low");
       } else if (text[text.length - 1] === "G") {
-        axios
-          .get(
-            `https://blueflyapp.herokuapp.com/Data/filter?${sortCategory[1]}trendingcat=Trending`
-          )
-          .then(({ data }) => {
-            filterData(data);
-          })
-          .catch((err) => {
-            console.log("err occured: ", err);
-          });
+        filterByCategory('Trending');
         setValue("Trending");
       }
     }

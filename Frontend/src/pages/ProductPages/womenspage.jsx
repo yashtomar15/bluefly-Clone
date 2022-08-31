@@ -7,21 +7,33 @@ import styles from "./Styles/womens.module.css";
 // import  components
 import CustomizedAccordions from "./Components/FilterAccordian";
 import { DropDown } from "./Components/DropDown";
+import {useSelector,useDispatch} from 'react-redux';
+import { ADD_WOMENS_DATA,ADD_PRODUCT_DATA } from "../../Redux/prodcutPages/actiontypes";
 
 export const WomensPage = () => {
-  const [womensData, setData] = useState([]);
+  // const [womensData, setData] = useState([]);
   const [update, setUpdate] = useState(false);
+
+  const {womensData}=useSelector((state)=>state.products);
+console.log(womensData,'womesdata form redux');
+const dispatch=useDispatch();
+
   useEffect(() => {
     axios
-      .get("https://blueflyapp.herokuapp.com/Data/Women's")
+      .get("https://bluelybackend.herokuapp.com/Data")
       .then(({ data }) => {
-        setData(data);
-        console.log(data);
+        let filterWomensData=data.filter((item)=>{
+          let pattern=/Women/;
+          return pattern.test(item.category);
+        })
+        // console.log(filterMensData,'filterMensdata')
+        dispatch({type:ADD_WOMENS_DATA,payload:filterWomensData});
+        dispatch({type:ADD_PRODUCT_DATA,payload:data});
       })
       .catch((err) => console.log("error occured: ", err));
   }, []);
   const filterData = (data) => {
-    setData(data);
+    // setData(data);
   };
 
   const filterTypes = ["womens", "Women's", "Women's wear", "Women's jeans"];
@@ -47,7 +59,7 @@ export const WomensPage = () => {
         </div>
         <div className={styles.dresess}>
           {womensData.map((item, i) => {
-            return <WomensOne key={i} {...item} />;
+            return <WomensOne key={i} {...item} ind={i} />;
           })}
         </div>
       </div>

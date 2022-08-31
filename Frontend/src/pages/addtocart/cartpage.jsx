@@ -64,8 +64,8 @@ export const Cartpage = () => {
         <>
           {cartdata.length > 0 ? (
             <div>
-              {cartdata.map((ele) => {
-                return <Firstcartlist {...ele} key={ele._id} func={removing} />;
+              {cartdata.map((ele,ind) => {
+                return <Firstcartlist {...ele} key={ind} func={removing} />;
               })}
             </div>
           ) : (

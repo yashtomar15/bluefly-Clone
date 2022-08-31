@@ -6,6 +6,7 @@ import {
 } from "redux";
 
 import { cartreducer } from "./addtocart/reducer";
+import { productreducer } from "./prodcutPages/reducer";
 
 const middleware = (store) => (next) => (action) => {
   next(action);
@@ -23,4 +24,9 @@ const enhancer = composeEnhancers(
   // other store enhancers if any
 );
 
-export const store = createStore(cartreducer, enhancer);
+const rootreducer=combineReducers({
+  cart:cartreducer,
+  products:productreducer
+})
+
+export const store = createStore(rootreducer, enhancer);

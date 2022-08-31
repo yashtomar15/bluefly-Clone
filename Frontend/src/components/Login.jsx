@@ -23,7 +23,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("https://blueflyapp.herokuapp.com/Auth/login", {
+      let res = await fetch("https://bluelybackend.herokuapp.com/Auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData),

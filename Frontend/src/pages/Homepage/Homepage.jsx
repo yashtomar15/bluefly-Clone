@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import '../../styles/homepage.css';
 import {shopByCategory,newArrivals,trendingNow,lowerImages} from './homedata';
 import styles from './styles/homepage.module.css';
@@ -8,10 +8,11 @@ import { FlexProducts } from './components/flexProducts';
 import { Footer } from './components/fotter';
 import { OfferSlider } from './components/offerSlider';
 import {Link} from 'react-router-dom';
-
+import axios from 'axios';
+import {useSelector,useDispatch} from 'react-redux';
+import { ADD_PRODUCT_DATA } from '../../Redux/prodcutPages/actiontypes';
 export const Homepage = () => {
 
-  
   return (
     <div style={{position:"relative",top:'20px'}}>
 

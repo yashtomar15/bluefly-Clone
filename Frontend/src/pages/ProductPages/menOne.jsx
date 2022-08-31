@@ -1,45 +1,57 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Styles/womenOne.module.css";
 
 export const MensOne = (items) => {
-  const { brand, price, title, images1, images2, _id } = items;
+  const { brand, price, title, images1, images2, _id ,ind} = items;
   // console.log(items);
   // console.log(category,quantity,sizes,Trending,brand,price,color1,color2,title,condition,images1,images2);
-  const [image, setImage] = useState(images1.main);
+  const [image, setImage] = useState(true);
 
+  useEffect(()=>{
+    if(ind===1){
+      setImage(false);
+    }
+  },[])
+  
   const handleMouseOver = () => {
-    setImage(images1.top);
+    setImage(false);
   };
   const handleMouseOut = () => {
-    setImage(images1.main);
+    setImage(true);
   };
   const discount = price * 0.6;
   return (
     <>
-      <div className={styles.container}>
-        <img
-          src={image}
-          alt="top dress"
-          className={styles.dress}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-        />
-        {/* <p className='brand'> {brand},{color1},{color2 && color2}{sizes},condition_{condition},extra off</p> */}
-        <div>
-          <p className={styles.brand}> {brand}</p>
-          <Link
+    <Link
             style={{ textDecoration: "none", color: "black" }}
             to={`/mens/${_id}`}
           >
+      <div className={styles.container}>
+        {image? ( <img
+          src={images1.main}
+          alt="top dress"
+          className={styles.dress}
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseOut}
+        />):( <img
+          src={images1.top}
+          alt="top dress"
+          className={styles.dress}
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseOut}
+        /> )}
+        {/* <p className='brand'> {brand},{color1},{color2 && color2}{sizes},condition_{condition},extra off</p> */}
+        <div>
+          <p className={styles.brand}> {brand}</p>
             <p className={styles.title}>{title}</p>
-          </Link>
           <p className={styles.price}>
             <s>${price}</s> <span>${discount}</span>{" "}
           </p>
           <p className={styles.save}>Save 30%</p>
         </div>
       </div>
+      </Link>
     </>
   );
 };

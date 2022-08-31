@@ -3,9 +3,9 @@ import SliderBox from "./SliderBox";
 import styles from "../styles/SingleProduct.module.css";
 // import MobileViewSlider from "./MobileViewSlider";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addcartdata } from "../Redux/addtocart/action";
-
+import axios from "axios";
 // let images = [
 //   {
 //     id: 1,
@@ -25,14 +25,30 @@ const SingleProduct = () => {
   const [images, setImages] = useState([]);
   const [zoomIn, setZoomIn] = useState(true);
   const dispatch = useDispatch();
+  const {productsData}=useSelector((state)=>state.products);
+  // console.log(productsData, 'products data from signle page')
+
   useEffect(() => {
-    const getData = async () => {
-      try {
-        let res = await fetch(
-          `https://blueflyapp.herokuapp.com/Data/filter?id=${id}`
-        );
-        let data = await res.json();
-        console.log(data);
+    if(productsData[0]){
+      const currProd=productsData.filter((item)=>{
+        return item._id===id;
+      })
+      // console.log(currProd,'current product');
+      setImages([
+        [
+          currProd[0].images1?.main,
+          currProd[0].images1?.top,
+          currProd[0].images1?.bottom,
+          currProd[0].images1?.side,
+        ],
+      ]);
+      setProduct(currProd[0]);
+    }
+    else{
+      axios.
+         get(`https://bluelybackend.herokuapp.com/Data/filter?id=${id}`)
+         .then(({data})=>{
+          // console.log(data,'data from api');
         setImages([
           [
             data.images1?.main,
@@ -48,12 +64,12 @@ const SingleProduct = () => {
           ],
         ]);
         setProduct(data);
-      } catch (e) {
-        console.log(e, "Something went wrong");
-      }
-    };
-    getData();
-  }, [id]);
+         })
+         .catch((err)=>console.log('err',err));
+    
+    }
+ 
+  }, []);
 
   const handleZoomInOut = () => {
     setZoomIn(!zoomIn);
