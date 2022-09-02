@@ -153,4 +153,5 @@ side:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2147866/20
 bottom:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2147866/2017/11/7/11510038871360-Jaipur-Kurti-Women-Kurta-Sets-4861510038871171-5.jpg"
 }
 }
-
+deploy url-->
+https://polite-kulfi-cc80b0.netlify.app/
