@@ -20,6 +20,8 @@ App.get("/", (req, res) => {
   res.send("welcome to blueflywebsite this is a backend");
 });
 
+const port =process.env.PORT || 8080;
+
 App.listen(port, async () => {
   try {
     await connect;

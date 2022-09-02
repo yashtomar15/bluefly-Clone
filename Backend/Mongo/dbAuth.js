@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connect = mongoose.connect(
-  "mongodb+srv://App123:App123@cluster0.56dvjei.mongodb.net/Bluefly?retryWrites=true&w=majority"
+  'mongodb+srv://yashtomar15:incorrect_password@cluster0.zolsoeq.mongodb.net/bluefly?retryWrites=true&w=majority'
 );
 
 // userschema for store signup data
