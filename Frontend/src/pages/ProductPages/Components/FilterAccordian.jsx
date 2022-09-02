@@ -54,10 +54,10 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 export default function CustomizedAccordions({filterData,filterCategory}) {
   const [ expanded, setExpanded] = React.useState('panel1');
-const [inputname,setName]=useState("");
+// const [inputname,setName]=useState("");
   
    const {productsData,mensData,womensData}=useSelector((state)=>state.products);
-   console.log(mensData,'mesdata data form acoordian');
+  //  console.log(mensData,'mesdata data form acoordian');
    const dispatch=useDispatch();
 
 const category=filterCategory[1];
@@ -68,10 +68,16 @@ const category=filterCategory[1];
 
   const filterByCategory=(cat)=>{
     let filterData=productsData.filter((item)=>{
-      return item.category===cat.trim();
+      return item.category===cat;
     })
     // console.log(filterData,"filter data by category")
+    if(filterCategory[1]==="Men's"){
+      dispatch({type:ADD_MENS_DATA,payload:filterData});
+    }
+    else{
       dispatch({type:ADD_WOMENS_DATA,payload:filterData});
+    }
+      
   }
   const filterByColors=(color)=>{
     if(filterCategory[1]==="Men's"){
@@ -144,9 +150,28 @@ const category=filterCategory[1];
      }
     }
   }
+  const getData=(cat)=>{
+    let pattern;
+    if(cat==="Men's"){
+      pattern=/Men/;
+    }else{
+      pattern=/Women/;
+    }
+      const data=productsData.filter((item)=>{
+          return pattern.test(item.category);
+      })
+      if(cat==="Men's"){
+        dispatch({type:ADD_MENS_DATA,payload:data});
+      }
+      else{
+        dispatch({type:ADD_WOMENS_DATA,payload:data});
+      }
+  }
+
  const handleClick=(e)=>{
-  // let inputname=e.target.name;
-  setName(e.target.name);
+  let inputname=e.target.name;
+  console.log(inputname,'inputname');
+  // setName(e.target.name);
   let checked=e.target.checked;
 
   // add womens{category) in every query, (additional edit->api only work after new deployment)
@@ -172,21 +197,7 @@ const category=filterCategory[1];
     filterByColors('blue');
   }
   // fliter by sizes
-  // else if(inputname==="small" &&checked){
-  //   axios.get(`https://bluelybackend.herokuapp.com/Data/filter?${category}size=small`)
-  //   .then(({data})=>{filterData(data);})
-  //   .catch((err)=>console.log("error occured: ",err))
-  // }
-  // else if(inputname==="medium" &&checked){
-  //   axios.get(`https://bluelybackend.herokuapp.com/Data/filter?${category}size=medium`)
-  //   .then(({data})=>{filterData(data);})
-  //   .catch((err)=>console.log("error occured: ",err))
-  // }
-  // else if(inputname==="large" &&checked){
-  //   axios.get(`https://bluelybackend.herokuapp.com/Data/filter?${category}size=large`)
-  //   .then(({data})=>{filterData(data);})
-  //   .catch((err)=>console.log("error occured: ",err))
-  // }
+
   // filter by condition
   else if(inputname==="new" &&checked){
    filterByCondition('new');
@@ -210,6 +221,8 @@ else if(inputname==="highTlow" &&checked){
 }
 else if(inputname==="lowThigh" &&checked){
   sortByPrice('inc');
+}else if(!checked){
+  getData(filterCategory[1]);
 }
  }
 

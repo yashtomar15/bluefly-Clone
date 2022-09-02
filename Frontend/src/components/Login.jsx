@@ -1,18 +1,23 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setToken } from "../Redux/addtocart/action";
 import styles from "../styles/Login.module.css";
 import ResetPassword from "./ResetPassword";
+import Header from "./header/Header";
+import { OfferSlider } from "../pages/Homepage/components/offerSlider";
+import { LowerCont } from "../pages/Homepage/components/lowerCont";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
   const [resetStaus, setResetStaus] = useState(false);
   const navigate = useNavigate();
+  const state=useSelector((state)=>state);
   const dispatch = useDispatch();
   const toogleResetStatus = () => {
     setResetStaus(!resetStaus);
   };
+  let cartRoute=JSON.parse(localStorage.getItem('cartroute'));
   const handleChange = (e) => {
     let { name, value } = e.target;
     setLoginData({
@@ -37,13 +42,39 @@ const Login = () => {
       localStorage.setItem("token", JSON.stringify(data.token));
       dispatch(setToken(data.token));
       alert(data.response);
-      navigate("/");
+    
+      if(cartRoute){
+        navigate(`/${cartRoute}`,{replace:true});
+      }else{
+        navigate("/");
+      }
     } catch (e) {
       console.log(e);
     }
   };
+
+  const handleLogout=()=>{
+    localStorage.setItem('token',null);
+    dispatch({type:"SET TOKEN",payload:null});
+  }
   return (
-    <div className={styles.login_wrapper}>
+    <>
+    <Header />
+    <OfferSlider margintop={true} />
+    {state.cart.token? (<div >
+      <h1 style={{textAlign:"center",marginTop:'1%'}}>MY ACCOUNT</h1>
+      <button onClick={handleLogout} 
+      style={{width:'100px',
+      padding:'3px' ,
+      backgroundColor:'white',
+      coloe:'black',
+      border:'1px solid grey',
+      cursor:'pointer',
+      marginTop:'1%'
+      }}
+      >LOG OUT</button>
+      </div>):(
+      <div className={styles.login_wrapper}>
       {resetStaus ? (
         <ResetPassword toogleResetStatus={toogleResetStatus} />
       ) : (
@@ -88,6 +119,10 @@ const Login = () => {
         </>
       )}
     </div>
+    )}
+
+    <LowerCont />
+    </>
   );
 };
 

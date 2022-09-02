@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 export const RequiredAuth = ({ children }) => {
-  const { token } = useSelector((state) => state);
+  const { token } = useSelector((state) => state.cart);
   console.log(token);
   if (token) return <>{children}</>;
   else {

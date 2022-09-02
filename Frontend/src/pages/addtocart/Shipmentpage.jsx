@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 export const Shipment = () => {
   const state = useSelector((state) => state);
   const navigate = useNavigate();
-  console.log(state);
+  // console.log(state);
   return (
     <div>
       <div style={{ marginLeft: "5%" }}>
@@ -38,7 +38,7 @@ export const Shipment = () => {
               }}
             >
               <p style={{ color: "grey" }}>Contact</p>
-              <p>{state.address1.email}</p>
+              <p>{state.cart.address1.email}</p>
               <p
                 tyle={{ fontWeight: "bold", cursor: "pointer" }}
                 onClick={() => navigate("/cart/information")}
@@ -55,7 +55,7 @@ export const Shipment = () => {
               }}
             >
               <p style={{ color: "grey" }}>Ship to</p>
-              <p>{state.address1.address1}</p>
+              <p>{state.cart.address1.address1}</p>
               <p
                 tyle={{ fontWeight: "bold", cursor: "pointer" }}
                 onClick={() => navigate("/cart/information")}

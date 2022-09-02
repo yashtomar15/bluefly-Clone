@@ -5,7 +5,11 @@ import styles from "../styles/SingleProduct.module.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addcartdata } from "../Redux/addtocart/action";
+import Header from "./header/Header";
 import axios from "axios";
+import { LowerCont } from "../pages/Homepage/components/lowerCont";
+import { OfferSlider } from "../pages/Homepage/components/offerSlider";
+
 // let images = [
 //   {
 //     id: 1,
@@ -81,6 +85,10 @@ const SingleProduct = () => {
   };
 
   return (
+    <>
+    <Header />
+    <OfferSlider margintop={true}/>
+
     <div className={styles.product_container}>
       <div className={styles.left_side}>
         {zoomIn ? (
@@ -175,6 +183,9 @@ const SingleProduct = () => {
         </div>
       </div>
     </div>
+    
+    <LowerCont />
+    </>
   );
 };
 

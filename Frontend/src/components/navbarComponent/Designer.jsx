@@ -28,12 +28,12 @@ const Designer = () => {
                   <p>Christian</p>
                   <p>Dior</p>
                   <p>Dolce &amp; Gabbana</p>
-                  <p>Fendi</p>
+                  {/* <p>Fendi</p>
                   <p>Giuseppe Zanotti</p>
                   <p>Givenchy</p>
                   <p>Jimmy Choo</p>
                   <p>Kate Spade</p>
-                  <p>Manolo Blahnik</p>
+                  <p>Manolo Blahnik</p> */}
                 </div>
                 <div>
                   <p>Miu Miu</p>
@@ -44,12 +44,12 @@ const Designer = () => {
                   <p>Roberto Cavalli</p>
                   <p>Saint Laurent</p>
                   <p>Salvatore Ferragamo</p>
-                  <p>Stella McCartney</p>
+                  {/* <p>Stella McCartney</p>
                   <p>Stuart Weitzman</p>
                   <p>Tod's</p>
                   <p>Tom Ford</p>
                   <p>Valentino</p>
-                  <p>Versace</p>
+                  <p>Versace</p> */}
                 </div>
               </div>
             </div>

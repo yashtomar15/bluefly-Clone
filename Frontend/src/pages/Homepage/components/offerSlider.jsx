@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export const OfferSlider=()=>{
+export const OfferSlider=({margintop})=>{
     const settings={
         arrows:true,
         dots:false,
@@ -14,6 +14,7 @@ export const OfferSlider=()=>{
     slidesToScroll: 1,
     }
     return (<>
+    {margintop && <div style={{marginTop:'20px'}}></div>}
     <Slider {...settings}>
         <div>
       <div style={{width:'100%',backgroundColor:'black', fontSize:'15px', padding:'5px', color:'white'}} >FREE SHIPPING on Order Over $99</div>

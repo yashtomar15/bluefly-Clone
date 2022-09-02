@@ -6,17 +6,17 @@ export const Thankyou = () => {
   React.useEffect(() => {
     setTimeout(() => {
       navigate("/", { replace: "true" });
+      let token=JSON.parse(localStorage.getItem('token'));
       localStorage.clear();
+      // set token
+      localStorage.setItem('token',JSON.stringify(token));
       window.location.reload(false);
     }, 3000);
   }, []);
-  return (
-    <div>
+  return ( 
       <img
         src="https://raw.githubusercontent.com/darkwingpatil/Task-manag/main/rhodes.png"
-        height="100%"
-        width="100%"
+         style={{width:'90%',height:'700px'}}
       />
-    </div>
   );
 };

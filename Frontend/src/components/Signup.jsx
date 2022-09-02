@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/Signup.module.css";
+import Header from "./header/Header";
+// import { OfferSlider } from "../pages/Homepage/components/offerSlider";
+import { LowerCont } from "../pages/Homepage/components/lowerCont";
 
 const Signup = () => {
   const [signUpData, setSignUpData] = useState({});
@@ -30,6 +33,9 @@ const Signup = () => {
     }
   };
   return (
+    <>
+    <Header />
+    {/* <OfferSlider margintop={true} /> */}
     <div className={styles.singnup_wrapper}>
       <div className={styles.heading}>
         <h3>Create Account</h3>
@@ -81,6 +87,9 @@ const Signup = () => {
         </form>
       </div>
     </div>
+
+    <LowerCont />
+    </>
   );
 };
 

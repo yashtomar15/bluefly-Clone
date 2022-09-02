@@ -9,9 +9,11 @@ import CustomizedAccordions from "./Components/FilterAccordian";
 import { DropDown } from "./Components/DropDown";
 import {useSelector,useDispatch} from 'react-redux';
 import { ADD_WOMENS_DATA,ADD_PRODUCT_DATA } from "../../Redux/prodcutPages/actiontypes";
+import Header from "../../components/header/Header";
+import { LowerCont } from "../Homepage/components/lowerCont";
+import { OfferSlider } from "../Homepage/components/offerSlider";
 
 export const WomensPage = () => {
-  // const [womensData, setData] = useState([]);
   const [update, setUpdate] = useState(false);
 
   const {womensData}=useSelector((state)=>state.products);
@@ -36,10 +38,14 @@ const dispatch=useDispatch();
     // setData(data);
   };
 
-  const filterTypes = ["womens", "Women's", "Women's wear", "Women's jeans"];
+  const filterTypes = ["womens", "Women's", "Women's wear ", "Women's jeans"];
   const sortCategory = ["sortwomens", "womens"];
 
   return (
+    <>
+   <Header /> 
+<OfferSlider margintop={true}/>
+
     <div>
       <h1 className={styles.pageHeading}>Womens's Dress</h1>
       <div className={styles.Cont1}>
@@ -64,5 +70,8 @@ const dispatch=useDispatch();
         </div>
       </div>
     </div>
+
+    <LowerCont />
+    </>
   );
 };

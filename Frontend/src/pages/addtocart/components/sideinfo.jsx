@@ -10,15 +10,15 @@ import Badge from "@mui/material/Badge";
 export const Sideinfo = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  let img = state.cartdata[0].images1["main"];
+  let img = state.cart.cartdata[0].images1["main"];
   const [input, setinput] = React.useState("");
   const shapeStyles = { bgcolor: `${img}`, width: 80, height: 80 };
   const rectangle = <Box component="span" sx={shapeStyles} />;
-  console.log(state);
+  // console.log(state);
 
   const applycopoun = () => {
-    console.log(state.coupon);
-    if (input === "get10off" && state.coupon == 0) {
+    console.log(state.cart.coupon);
+    if (input === "get10off" && state.cart.coupon == 0) {
       console.log(input);
       const data = Loaddata("total");
       let newtotal = data - data * 0.1;
@@ -27,7 +27,7 @@ export const Sideinfo = () => {
       alert("10% off coupon applied successfully");
       dispatch(mycoupon(1));
       // window.location.reload(false)
-    } else if (input === "firstorder20" && state.coupon === 0) {
+    } else if (input === "firstorder20" && state.cart.coupon === 0) {
       console.log(input);
       const data = Loaddata("total");
       let newtotal = data - data * 0.2;
@@ -36,7 +36,7 @@ export const Sideinfo = () => {
       alert(" 20% off coupon applied successfully");
       dispatch(mycoupon(1));
       //   window.location.reload(false);
-    } else if (input == "welcome30" && state.coupon == 0) {
+    } else if (input == "welcome30" && state.cart.coupon == 0) {
       console.log(input);
       const data = Loaddata("total");
       let newtotal = data - data * 0.3;
@@ -45,23 +45,21 @@ export const Sideinfo = () => {
       alert(" 30% off coupon applied successfully");
       dispatch(mycoupon(1));
       //   window.location.reload(false);
-    } else if (state.coupon == 1) {
+    } else if (state.cart.coupon == 1) {
       alert("Coupon already applied");
     }
   };
   return (
     <Sideinfodiv>
-      {state.updateddata.map((ele) => {
+      {state.cart.updateddata.map((ele,ind) => {
         return (
-          <Sideinfodivcont>
+          <Sideinfodivcont key={ind}>
             <div style={{ marginTop: "5%" }}>
               <Badge color="secondary" badgeContent={ele.quant}>
                 {
                   <img
                     src={ele.images1.main}
-                    height="70"
-                    width="80"
-                    style={{ borderRadius: "20px" }}
+                    style={{ borderRadius: "20px" ,width:'60px',height:'60px'}}
                   ></img>
                 }
               </Badge>
@@ -105,7 +103,7 @@ export const Sideinfo = () => {
       <div>
         <Forbuttons2>
           <p>Subtotal</p>
-          <p>${state.total}</p>
+          <p>${state.cart.total}</p>
         </Forbuttons2>
         <Forbuttons2>
           <p>Shipping </p>
@@ -120,7 +118,7 @@ export const Sideinfo = () => {
 
       <Forbuttons2>
         <p>Total</p>
-        <p>${state.total + Number(19.95) + Number(60.0)}</p>
+        <p>${state.cart.total + Number(19.95) + Number(60.0)}</p>
       </Forbuttons2>
     </Sideinfodiv>
   );

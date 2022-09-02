@@ -20,6 +20,7 @@ import { RequiredAuth } from "./components/RequiredAuth";
 import { useDispatch } from "react-redux";
 import { checkToken } from "./Redux/addtocart/action";
 import SliderBox from './components/SliderBox';
+import {Footer} from './pages/Homepage/components/fotter';
 
 function App() {
   const navigate = useNavigate();
@@ -36,8 +37,8 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <Header />
+    <div className="App"> 
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -87,6 +88,7 @@ function App() {
           }
         ></Route>
       </Routes>
+    <Footer />
     </div>
   );
 }

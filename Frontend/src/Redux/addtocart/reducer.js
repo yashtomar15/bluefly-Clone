@@ -22,11 +22,24 @@ export const cartreducer = (state = initState, action) => {
   switch (action.type) {
     case AddtocartData: {
       let data = Loaddata("cart") || [];
-      let newdata = [...data, action.payload];
-      Savedata("cart", newdata);
+      action.payload['quant']=1;
+      let newData=[...data];
+      let flag=false;
+      if(data.length>0){
+        data.forEach((item,i)=>{
+           if(item._id===action.payload._id){
+            data[i].quant=data[i].quant+1;
+            flag=true;
+           }
+        })
+      }
+      if(!flag){
+        newData = [...data, action.payload];
+      }
+      Savedata("cart", newData);
       return {
         ...state,
-        cartdata: newdata,
+        cartdata: newData,
       };
     }
     case Mycoupon: {
@@ -41,9 +54,10 @@ export const cartreducer = (state = initState, action) => {
       console.log(action.payload, "inreducer");
       const { _id, value } = action.payload;
       console.log(_id, value);
-      let mydata1 = Loaddata("modified") || Loaddata("cart");
+      // let mydata1 = Loaddata("modified") || Loaddata("cart");
+      let mydata1 = Loaddata("cart");
       let update = mydata1.map((ele) => {
-        if (ele._id == _id) {
+        if (ele._id === _id) {
           ele.quant = value;
           return ele;
         } else {
@@ -54,7 +68,8 @@ export const cartreducer = (state = initState, action) => {
         }
       });
       console.log(update, "in reducer for quantity");
-      Savedata("modified", update);
+      // Savedata("modified", update);
+      Savedata("modified", mydata1);
       let sum = 0;
       update.map((ele) => {
         sum = sum + ele.quant * ele.price;
@@ -111,6 +126,11 @@ export const cartreducer = (state = initState, action) => {
         ...state,
         token: null,
       };
+    }
+    case "SET TOKEN":{
+      return{
+        ...state,token:action.payload
+      }
     }
     default: {
       return state;

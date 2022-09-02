@@ -100,37 +100,45 @@ const Header = () => {
                 <Link to={"/womens"}>Womens</Link>
               </li>
               <li>
-                <Link to={"/"} onMouseEnter={() => handleHover("HANDBAG")}>
+                <Link to={"/"} onMouseEnter={() => handleHover("HANDBAG")} 
+                onClick={()=>{alert('Data is only available for mens and womens, So Please click on mens or womens')}}>
+                  {/* {alert('Data is only available for mens and womens')} */}
                   HANDBAGS &amp; ACCESSORIES
                 </Link>
               </li>
               <li>
-                <Link to={"/"} onMouseEnter={() => handleHover("DESIGNER")}>
+                <Link to={"/"} onMouseEnter={() => handleHover("DESIGNER")}
+                onClick={()=>{alert('Data is only available for mens and womens, So Please click on mens or womens')}}>
                   DESIGNERS
                 </Link>
               </li>
               <li>
-                <Link to={"/"} onMouseEnter={() => handleHover("SUNGLASSES")}>
+                <Link to={"/"} onMouseEnter={() => handleHover("SUNGLASSES")}
+                onClick={()=>{alert('Data is only available for mens and womens, So Please click on mens or womens')}}>
                   SUNGLASSES
                 </Link>
               </li>
               <li>
-                <Link to={"/"} onMouseEnter={() => handleHover("JEWELRY")}>
+                <Link to={"/"} onMouseEnter={() => handleHover("JEWELRY")}
+                onClick={()=>{alert('Data is only available for mens and womens, So Please click on mens or womens')}}>
                   JEWELRY &amp; WATCHES
                 </Link>
               </li>
               <li>
-                <Link to={"/"} onMouseEnter={() => handleHover("UNDER")}>
+                <Link to={"/"} onMouseEnter={() => handleHover("UNDER")}
+                onClick={()=>{alert('Data is only available for mens and womens, So Please click on mens or womens')}}>
                   UNDER $50
                 </Link>
               </li>
               <li>
-                <Link to={"/"} onMouseEnter={() => handleHover("BEAUTY")}>
+                <Link to={"/"} onMouseEnter={() => handleHover("BEAUTY")}
+                onClick={()=>{alert('Data is only available for mens and womens, So Please click on mens or womens')}}>
                   BEAUTY
                 </Link>
               </li>
               <li style={{ color: "red" }}>
-                <Link to={"/"} onMouseEnter={() => handleHover("CLEARANCE")}>
+                <Link to={"/"} onMouseEnter={() => handleHover("CLEARANCE")}
+                onClick={()=>{alert('Data is only available for mens and womens, So Please click on mens or womens')}}>
                   CLEARANCE
                 </Link>{" "}
               </li>

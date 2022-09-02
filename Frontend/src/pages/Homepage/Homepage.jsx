@@ -5,15 +5,27 @@ import styles from './styles/homepage.module.css';
 import {UpperSlider} from './components/upperSlider';
 import { MidImageSlider } from './components/midImageSlider';
 import { FlexProducts } from './components/flexProducts';
-import { Footer } from './components/fotter';
 import { OfferSlider } from './components/offerSlider';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {useSelector,useDispatch} from 'react-redux';
 import { ADD_PRODUCT_DATA } from '../../Redux/prodcutPages/actiontypes';
-export const Homepage = () => {
+import Header from '../../components/header/Header';
+import { LowerCont } from './components/lowerCont';
 
+export const Homepage = () => {
+const state=useSelector((state)=>state);
+const dispatch=useDispatch();
+let token=JSON.parse(localStorage.getItem('token'));
+
+useEffect(()=>{
+  if(token){
+    dispatch({type:"SET TOKEN",payload:token});
+  }  
+},[])
   return (
+    <>
+    <Header />
     <div style={{position:"relative",top:'20px'}}>
 
       <OfferSlider />
@@ -56,7 +68,7 @@ export const Homepage = () => {
       <div className={styles.shopByCategory}>
         {shopByCategory.map((item,ind)=>{
           return <div key={ind}>
-            <Link to="/womens" style={{textDecoration:'none',color:'black'}}>
+            <Link to="womens" style={{textDecoration:'none',color:'black'}}>
             <img src={item.image} alt={"products"}/>
             <p >{item.title}</p>
             </Link>
@@ -81,21 +93,10 @@ export const Homepage = () => {
        productData={trendingNow}/> 
 
 {/* <div className={styles.line}></div> */}
-<div className={styles.lowerImagesDiv}>
-{lowerImages.map((item,ind)=>{
-    return <div key={ind}>
-      <Link to="/womens" style={{textDecoration:'none',color:'black'}}>
-      <img src={item.image} />
-      <h2>{item.offerTagline}</h2>
-      <p>{item.title}</p>
-      <button className={styles.homeButtons} style={{padding:'5px'}}>{item.btn}</button>
-      </Link>
-          </div>
-})}
-</div>
+{/*Lower images div */}
+<LowerCont />
 
-{/* Footer */}
-<Footer />
  </div>
+ </>
   )
 }

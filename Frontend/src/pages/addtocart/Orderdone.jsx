@@ -1,13 +1,16 @@
 import React from 'react'
 import "./otp.css"
-
-
+import {Link, useNavigate} from 'react-router-dom';
+import { Thankyou } from './Thankyou';
 
 export const OtpInput=({totalInputs,onChange,val})=>{
-    const inputRef=React.useRef([])
-    const [data,setdata]=React.useState([])
+    const navigate=useNavigate();
+    const inputRef=React.useRef([]);
+    const [data,setdata]=React.useState([]);
 
-
+//   if(data.length===4){
+//     navigate('cart/information/shipment/payment/orderdone/thankyou',{replace:true});
+//   }
     // React.useEffect(()=>{
     //     // var val = Math.floor(1000 + Math.random() * 9000);
     //     setTimeout(()=>{
@@ -27,8 +30,9 @@ export const OtpInput=({totalInputs,onChange,val})=>{
     }
     return(
         <div onPaste={handlePaste} style={{border:"1px solid white",margin:"auto",width:"30%",height:"400px"}}>
+            {/* <Link to='cart/information/shipment/payment/orderdone/thankyou' style={{fontSize:'25px'}}>Check</Link> */}
             <h1 style={{marginLeft:"20%"}} >Enter the Otp</h1>
-            <img src="https://image.shutterstock.com/image-vector/secure-payment-vector-illustration-test-600w-1860566662.jpg" width="300" height="200" style={{marginLeft:"10%"}}/>
+            <img src="https://image.shutterstock.com/image-vector/secure-payment-vector-illustration-test-600w-1860566662.jpg"  style={{marginLeft:"10%",width:"350px", height:"200px"}}/>
             <div style={{marginLeft:"10%"}}>
             {
                 new Array(totalInputs).fill(0).map((ele,index)=><input type="text" className='otpinput'  maxLength={1} key={index}
@@ -75,11 +79,12 @@ export const OtpInput=({totalInputs,onChange,val})=>{
                 }}/>)
             }
             </div>
-            <div style={{marginLeft:"22%",marginTop:"2%"}}>
-                <img src="https://image.shutterstock.com/image-vector/secure-internet-connection-ssl-icon-600w-594228239.jpg" height="90" width="100"/>
-                <img src="https://image.shutterstock.com/image-vector/secure-protected-payments-icon-600w-293600882.jpg" height="90" width="100"/>
-            </div>
-           
+            <button style={{backgroundColor:'black',color:'black',marginLeft:'25px',marginTop:'10px'}}><Link to='thankyou' style={{fontSize:'25px',textDecoration:'none',color:'white',padding:'10px'}}> Submit </Link></button>
+            {/* <div style={{marginLeft:"22%",marginTop:"2%"}}>
+                <img src="https://image.shutterstock.com/image-vector/secure-internet-connection-ssl-icon-600w-594228239.jpg"  style={{height:"90px", width:"100px"}}/>
+                <img src="https://image.shutterstock.com/image-vector/secure-protected-payments-icon-600w-293600882.jpg" style={{height:"90px", width:"100px"}}/>
+            </div> */}
+        
         </div>
     )
 }

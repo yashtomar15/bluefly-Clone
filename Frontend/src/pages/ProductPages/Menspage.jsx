@@ -10,12 +10,12 @@ import { DropDown } from "./Components/DropDown";
 import { MensOne } from "./menOne";
 import {useSelector,useDispatch} from 'react-redux';
 import { ADD_MENS_DATA,ADD_PRODUCT_DATA } from "../../Redux/prodcutPages/actiontypes";
+import Header from "../../components/header/Header";
+import { LowerCont } from "../Homepage/components/lowerCont";
+import { OfferSlider } from "../Homepage/components/offerSlider";
 
 export const MensPage = () => {
-  // const [mensData, setData] = useState([]);
   const {mensData,productsData}=useSelector((state)=>state.products);
-  console.log(mensData,'mensdata from redux',productsData,'products form redux');
-  // console.log(productsData,'products form redux');
   const dispatch=useDispatch();
 
   const sortByprice=(order)=>{
@@ -41,6 +41,7 @@ export const MensPage = () => {
           return pattern.test(item.category);
         })
         // console.log(filterMensData,'filterMensdata')
+        // mensData=[...filterData];
         dispatch({type:ADD_MENS_DATA,payload:filterMensData});
         dispatch({type:ADD_PRODUCT_DATA,payload:data});
       })
@@ -49,11 +50,14 @@ export const MensPage = () => {
   const filterData = (data) => {
     // setData(data);
   };
-  // console.log("mensdata", mensData);
   const filterTypes = ["mens", "Men's", "Men's Shirt", "Men's Pant"];
 
   const sortCategory = ["sortmens", "Men"];
   return (
+    <>
+    <Header />
+    <OfferSlider margintop={true}/>
+
     <div>
       <h1 className={styles.pageHeading}>Mens's Dress</h1>
       <div className={styles.Cont1}>
@@ -78,5 +82,8 @@ export const MensPage = () => {
         </div>
       </div>
     </div>
+
+    <LowerCont />
+    </>
   );
 };

@@ -29,12 +29,12 @@ const Sunglass = () => {
                 <p>Fendi</p>
                 <p>Givenchy</p>
                 <p>Gucci</p>
-                <p>Jimmy Choo</p>
+                {/* <p>Jimmy Choo</p>
                 <p>Miu Miu</p>
                 <p>Prada</p>
                 <p>Saint Laurent</p>
                 <p>Stella McCartney</p>
-                <p>Tom Ford</p>
+                <p>Tom Ford</p> */}
               </div>
             </div>
             <div className="clothCom">
@@ -51,11 +51,11 @@ const Sunglass = () => {
                 <p>Dolce &amp; Gabbana</p>
                 <p>Ermenegildo Zenga</p>
                 <p>Givenchy</p>
-                <p>Gucci</p>
+                {/* <p>Gucci</p>
                 <p>Prada</p>
                 <p>Ray Ban</p>
                 <p>Saint Laurent</p>
-                <p>Tom Ford</p>
+                <p>Tom Ford</p> */}
               </div>
             </div>
           </div>

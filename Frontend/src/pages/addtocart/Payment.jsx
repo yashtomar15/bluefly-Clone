@@ -18,7 +18,7 @@ export const Payment = () => {
   const myref=React.useRef("")
   const myref1=React.useRef("")
   const navigate=useNavigate()
-  console.log(state)
+  // console.log(state.cart)
 
   const helo=()=>{
     console.log("hello")
@@ -42,13 +42,13 @@ export const Payment = () => {
           <div style={{width:"80%",height:"85px",border:"1px solid grey",marginTop:"5%",marginBottom:"5%",borderRadius:"5px",alignItems:"center"}}>
               <div style={{display:"flex",justifyContent:"space-around",paddingBottom:"1%",alignItems:"center"}}>
                   <p style={{color:"grey"}}>Contact</p>
-                  <p>{state.address1.email}</p>
+                  <p>{state.cart.address1.email}</p>
                   <p style={{fontWeight:"bold",cursor:"pointer"}} onClick={()=>navigate("/cart/information")}>Change</p>
               </div>
               <Br style={{width:"90%",margin:"auto"}}/>
               <div style={{display:"flex",justifyContent:"space-around",paddingTop:"1%",paddingBottom:"1%"}}>
                   <p style={{color:"grey"}}>Ship to</p>
-                  <p>{state.address1.address1}</p>
+                  <p>{state.cart.address1.address1}</p>
                   <p style={{fontWeight:"bold",cursor:"pointer"}} onClick={()=>navigate("/cart/information")}>Change</p>
               </div>
               <Br style={{width:"90%",margin:"auto"}}/>

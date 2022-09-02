@@ -42,15 +42,9 @@ const Jewelry = () => {
                   <p>Bulova</p>
                   <p>Bomberg</p>
                   <p>Breitling</p>
-                  <p>Briston</p>
+                  {/* <p>Briston</p>
                   <p>Calvin Klein</p>
-                  <p>Cartier</p>
-                  <p>CCCP</p>
-                  <p>Casio</p>
-                  <p>Certina</p>
-                  <p>Charriol</p>
-                  <p>Christian Dior</p>
-                  <p>Christian Van Sant</p>
+                  <p>Cartier</p> */}
                 </div>
                 <div>
                   <p>Ferrari</p>
@@ -60,14 +54,8 @@ const Jewelry = () => {
                   <p>Glam Rock</p>
                   <p>Glycine</p>
                   <p>Gucci</p>
-                  <p>Hamilton</p>
-                  <p>Hugo Boss</p>
-                  <p>Ingersoll</p>
-                  <p>Invicta</p>
-                  <p>ISW</p>
-                  <p>Jacques Lemans</p>
-                  <p>Jaquet Droz</p>
-                  <p>Jean Paul Gaultier</p>
+                  {/* <p>Hamilton</p>
+                  <p>Hugo Boss</p> */}
                 </div>
               </div>
             </div>
@@ -84,12 +72,9 @@ const Jewelry = () => {
                   <p>Michael Kors</p>
                   <p>Michele</p>
                   <p>Mido</p>
-                  <p>Movado</p>
-                  <p>Nautica</p>
-                  <p>Nixon</p>
-                  <p>Oceanaut</p>
-                  <p>Porsche</p>
-                  <p>Rado</p>
+                  {/* <p>Movado</p>
+                  <p>Nautica</p> */}
+               
                 </div>
                 <div>
                   <p>Red Line</p>
@@ -99,12 +84,8 @@ const Jewelry = () => {
                   <p>Sector</p>
                   <p>Seiko</p>
                   <p>Skagen</p>
-                  <p>Spinnaker</p>
-                  <p>Suunto</p>
-                  <p>Tag Heuer</p>
-                  <p>Timex</p>
-                  <p>Tissot</p>
-                  <p>Swarovski</p>
+                  {/* <p>Spinnaker</p>
+                  <p>Suunto</p> */}
                 </div>
               </div>
             </div>

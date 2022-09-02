@@ -1,6 +1,7 @@
 import React, { useRef, useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Styles/womenOne.module.css";
+import Header from "../../components/header/Header";
 
 export const MensOne = (items) => {
   const { brand, price, title, images1, images2, _id ,ind} = items;

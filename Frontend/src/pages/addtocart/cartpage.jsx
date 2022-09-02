@@ -16,16 +16,18 @@ import { Firstcartlist } from "./firstcartlist";
 import { removecart, addcartdata } from "../../Redux/addtocart/action";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/header/Header";
-
+import {Link} from 'react-router-dom';
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Information } from "./Information";
-
 import "../../index.css";
+import { OfferSlider } from "../Homepage/components/offerSlider";
+import { LowerCont } from "../Homepage/components/lowerCont";
+
 export const Cartpage = () => {
   const [render, setrender] = React.useState(0);
   const [value, setvalue] = React.useState(1);
-  const { cartdata, updateddata, total } = useSelector((state) => state);
+  const { cartdata, updateddata, total } = useSelector((state) => state.cart);
   const navigate = useNavigate();
   // console.log(cartdata.length)
   // console.log(cartdata,"this is cart data")
@@ -46,13 +48,15 @@ export const Cartpage = () => {
   return (
     <>
       <Header />
+      <OfferSlider margintop={true} />
+
       <Topcart>
         <p className="p1">CART</p>
         <p>Continue shopping</p>
-        <div></div>
+        {/* <div></div> */}
       </Topcart>
       <Topcart2>
-        <div></div>
+        {/* <div></div> */}
         <div>
           <p>Price</p>
           <p>Quantity</p>
@@ -60,12 +64,16 @@ export const Cartpage = () => {
         </div>
       </Topcart2>
       <Br></Br>
-      <div style={{ marginTop: "10%" }}>
+      <div style={{display:'flex'}}>
+      <div>
         <>
+        {/* {console.log(cartdata.length,"cartdata length")} */}
           {cartdata.length > 0 ? (
-            <div>
+            <div style={{height:'450px',overflow:'scroll',width:'120%'}}>
               {cartdata.map((ele,ind) => {
-                return <Firstcartlist {...ele} key={ind} func={removing} />;
+                return  <div style={{width:'90%',marginTop:"70px" }} key={ind} >
+                  <Firstcartlist {...ele} func={removing} />
+                  </div>
               })}
             </div>
           ) : (
@@ -97,15 +105,18 @@ export const Cartpage = () => {
             </Updatebutton>
             <Checkoutbutton
               onClick={() => {
-                navigate("/cart/information", { replace: true });
+                localStorage.setItem('cartroute',JSON.stringify('cart/information'));
               }}
             >
-              CHECKOUT
+              <Link to="/cart/information" style={{color:'white',textDecoration:'none'}}>ChECKOUT</Link>
+              {/* CHECKOUT */}
             </Checkoutbutton>
           </Forbuttons>
         </div>
       </Totalcontainer>
+      </div>
       <Br style={{ marginTop: "2%" }}></Br>
+      <LowerCont />
     </>
   );
 };

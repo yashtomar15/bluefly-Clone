@@ -73,8 +73,8 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
-  if (!state.token) {
-    console.log(state.token);
+  if (!state.cart.token) {
+    console.log(state.cart.token);
     // Relogin");
     <Navigate to="/login" />;
   }

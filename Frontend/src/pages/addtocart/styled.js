@@ -1,4 +1,3 @@
-import { style } from "@mui/system";
 import styled from "styled-components";
 
 export const Topcart = styled.div`
@@ -7,6 +6,7 @@ export const Topcart = styled.div`
   .p1 {
     font-size: 33px;
     font-weight: light;
+    margin-top:10px;
   }
 
   p {
@@ -26,20 +26,22 @@ export const Topcart = styled.div`
 export const Topcart2 = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-top: 5%;
+  margin-top: 2%;
 
   div {
-    width: 50%;
+    width: 15%;
     display: flex;
     justify-content: space-around;
-    margin-left: 5%;
+    margin-left: 7%;
   }
 `;
 
 export const Totalcontainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 2%;
+  margin-top:20%;
+  width:30%;
+  margin:auto;
 `;
 export const Br = styled.div`
   height: 1px;
@@ -48,14 +50,17 @@ export const Br = styled.div`
 `;
 
 export const Firstcont = styled.div`
-  height: 200px;
-  width: 100%;
+height: 100px;
+width: 100%;
   display: flex;
   justify-content: space-around;
 
   .title {
     font-family: Sans-Serif;
+    width:350px;
   }
+ 
+
 `;
 
 export const Forbuttons = styled.div`
@@ -76,6 +81,7 @@ export const Checkoutbutton = styled.button`
   color: white;
   height: 30px;
   width: 100px;
+  cursor:pointer;
 `;
 export const Updatebutton = styled.button`
   background: white;
@@ -83,11 +89,13 @@ export const Updatebutton = styled.button`
   height: 30px;
   width: 100px;
   border: 1px solid silver;
+  cursor:pointer;
 `;
 
 export const Removebutton = styled.button`
   background: white;
   color: black;
+  cursor:pointer;
   border: 1px solid grey;
   height: 30px;
   width: 100px;

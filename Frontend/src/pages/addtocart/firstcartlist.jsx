@@ -12,19 +12,19 @@ export const Firstcartlist = (ele) => {
     const[render,setrender]=React.useState(0)
     // console.log(ele.func,"js check")
     const dispatch=useDispatch()
-    const{total}=useSelector((state)=>state)
+    const{total}=useSelector((state)=>state.cart)
     // console.log(total)
+
     React.useEffect(()=>{
         let obj={"_id":ele._id,"value":value}
         dispatch(totalandquant(obj))
     },[])
     
   return (
-    
     <>
     <Firstcont>
-                <div>
-                    <img src={ele.images1.bottom} height="100" width="200"/>
+                <div >
+                    <img src={ele.images1.main} style={{height:'150px',width:'250px',marginTop:'-30px'}}/>
                 </div>
                 <div>
                     <p className="title">{ele.title}</p>
@@ -33,7 +33,7 @@ export const Firstcartlist = (ele) => {
                         window.location.reload(false);}}>Remove</Removebutton>
                 </div>
                 <div>
-                    <p>{`$${ele.price}`}</p>
+                    <p>{`${ele.price}`}</p>
                 </div>
                 <div>
                     <div style={{position:"relative"}}>

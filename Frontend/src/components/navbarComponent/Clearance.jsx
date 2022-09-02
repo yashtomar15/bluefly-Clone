@@ -29,12 +29,6 @@ export const Clearance = () => {
                 <p>Jeans &amp; Denim</p>
                 <p>Jewelry</p>
                 <p>Lingerie &amp; Hosiery</p>
-                <p>Pants &amp; Leggings</p>
-                <p>Shoes</p>
-                <p>Sunglasses</p>
-                <p>Swimwear</p>
-                <p>Tops</p>
-                <p>Watches</p>
               </div>
             </div>
             <div className="clothCom">
@@ -50,10 +44,6 @@ export const Clearance = () => {
                 <p>Shorts</p>
                 <p>Shoes</p>
                 <p>Suits &amp; Separates</p>
-                <p>Sunglasses</p>
-                <p>Sweaters</p>
-                <p>T-Shirts</p>
-                <p>Watches</p>
               </div>
             </div>
           </div>

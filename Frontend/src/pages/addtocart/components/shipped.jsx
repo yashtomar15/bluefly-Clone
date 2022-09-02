@@ -14,7 +14,7 @@ export const Shipped = () => {
 
     const state=useSelector((state)=>state)
     const navigate=useNavigate()
-    console.log(state.address1)
+    // console.log(state.cart.address1)
   return (
     <div>
         <h3 style={{marginBottom:"5%"}}>Shipping Method</h3>
